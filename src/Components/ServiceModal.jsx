@@ -1,0 +1,458 @@
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import FormModal from "./FormModal";
+import { API_ENDPOINTS } from "../config/api";
+import { 
+    FaTimes, 
+    FaExternalLinkAlt, 
+    FaCheckCircle, 
+    FaFileAlt, 
+    FaClock, 
+    FaRupeeSign,
+    FaUser,
+    FaBuilding,
+    FaHandshake,
+} from "react-icons/fa";
+
+const ServiceModal = ({ isOpen, onClose, service }) => {
+    const [showBookConsultant, setShowBookConsultant] = useState(false);
+    const [hasTriggeredForm, setHasTriggeredForm] = useState(false);
+    const applicationProcessRef = useRef(null);
+    const [consultantForm, setConsultantForm] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        service: service?.name || '',
+        message: ''
+    });
+
+    // Close FormModal when ServiceModal closes
+    useEffect(() => {
+        if (!isOpen) {
+            setShowBookConsultant(false);
+            setHasTriggeredForm(false);
+        }
+    }, [isOpen]);
+
+    // Intersection Observer to detect when Application Process comes into view
+    useEffect(() => {
+        if (!isOpen || !applicationProcessRef.current || hasTriggeredForm) return;
+
+        const currentRef = applicationProcessRef.current;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !hasTriggeredForm) {
+                        console.log('🎯 Application Process section is visible - opening FormModal');
+                        setShowBookConsultant(true);
+                        setHasTriggeredForm(true);
+                    }
+                });
+            },
+            {
+                threshold: 0.3, // Trigger when 30% of the element is visible
+                rootMargin: '0px 0px -50px 0px' // Trigger a bit before it's fully visible
+            }
+        );
+
+        observer.observe(currentRef);
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [isOpen, hasTriggeredForm]);
+
+    const handleConsultantSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await fetch(API_ENDPOINTS.SEND_FORM_MAIL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    smtp: {
+                        host: "mail.piwebtechnology.com",
+                        port: 587,
+                        secure: false,
+                        user: "admin@piwebtechnology.com",
+                        pass: "751821@Ss"
+                    },
+                    to: "admin@piwebtechnology.com",
+                    subject: `Book Consultant - ${service?.name}`,
+                    fields: consultantForm
+                })
+            });
+            alert('Consultation request submitted successfully! We will contact you soon.');
+            setShowBookConsultant(false);
+            setConsultantForm({ name: '', email: '', phone: '', service: service?.name || '', message: '' });
+        } catch {
+            alert('Failed to submit request. Please try again later.');
+        }
+    };
+
+    if (!service) return null;
+
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    {/* Backdrop */}
+                    <motion.div
+                        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={onClose}
+                    />
+
+                    {/* Modal Content */}
+                    <motion.div
+                        className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                    >
+                        {/* Hero Image Section */}
+                        {service.image && (
+                            <div className="relative h-64 w-full overflow-hidden rounded-t-2xl">
+                                <img 
+                                    src={service.image} 
+                                    alt={service.name}
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                <button
+                                    onClick={onClose}
+                                    className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors z-10"
+                                >
+                                    <FaTimes className="text-gray-700" />
+                                </button>
+                                <div className="absolute bottom-6 left-6 right-6 text-white">
+                                    <div className="text-5xl mb-3">{service.icon}</div>
+                                    <h2 className="text-3xl font-bold mb-2">{service.name}</h2>
+                                    <p className="text-lg opacity-90">{service.description}</p>
+                                </div>
+                            </div>
+                        )}
+                        
+                        {/* Header - Only show if no image */}
+                        {!service.image && (
+                            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl z-10">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <div className="text-4xl">{service.icon}</div>
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-gray-900">{service.name}</h2>
+                                            <p className="text-gray-600">{service.description}</p>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onClick={onClose}
+                                        className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                                    >
+                                        <FaTimes className="text-gray-500" />
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Content */}
+                        <div className="p-6 space-y-6">
+                            {/* Key Information */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {service.amount && (
+                                    <div className="bg-gradient-to-br from-red-50 to-pink-50 p-4 rounded-lg border border-red-200/50">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <FaRupeeSign className="text-red-600" />
+                                            <span className="font-semibold text-gray-900">Service Cost</span>
+                                        </div>
+                                        <p className="text-2xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">{service.amount}</p>
+                                    </div>
+                                )}
+                                <div className="bg-gradient-to-br from-pink-50 to-purple-50 p-4 rounded-lg border border-pink-200/50">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <FaClock className="text-pink-600" />
+                                        <span className="font-semibold text-gray-900">Processing Time</span>
+                                    </div>
+                                    <p className="text-lg font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">{service.processingTime}</p>
+                                </div>
+                                {service.interestRate ? (
+                                    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-4 rounded-lg border border-purple-200/50">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <FaCheckCircle className="text-purple-600" />
+                                            <span className="font-semibold text-gray-900">Interest Rate</span>
+                                        </div>
+                                        <p className="text-lg font-semibold text-purple-600">{service.interestRate}</p>
+                                    </div>
+                                ) : service.validity ? (
+                                    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-4 rounded-lg border border-purple-200/50">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <FaCheckCircle className="text-purple-600" />
+                                            <span className="font-semibold text-gray-900">Validity</span>
+                                        </div>
+                                        <p className="text-lg font-semibold text-purple-600">{service.validity}</p>
+                                    </div>
+                                ) : (
+                                    <div className="bg-gradient-to-br from-red-50 to-pink-50 p-4 rounded-lg border border-red-200/50">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <FaCheckCircle className="text-red-600" />
+                                            <span className="font-semibold text-gray-900">Service Type</span>
+                                        </div>
+                                        <p className="text-lg font-semibold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Professional Service</p>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Detailed Information */}
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                {/* Eligibility Criteria */}
+                                <div className="bg-gradient-to-br from-red-50/50 to-pink-50/50 p-6 rounded-xl border border-red-200/30">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <FaUser className="text-red-600" />
+                                        <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Eligibility Criteria</span>
+                                    </h3>
+                                    <ul className="space-y-2">
+                                        {service.eligibility.map((item, index) => (
+                                            <li key={index} className="flex items-start gap-2">
+                                                <FaCheckCircle className="text-red-500 mt-1 flex-shrink-0" />
+                                                <span className="text-gray-700">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Required Documents */}
+                                <div className="bg-gradient-to-br from-pink-50/50 to-purple-50/50 p-6 rounded-xl border border-pink-200/30">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <FaFileAlt className="text-pink-600" />
+                                        <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Required Documents</span>
+                                    </h3>
+                                    <ul className="space-y-2">
+                                        {service.documents.map((doc, index) => (
+                                            <li key={index} className="flex items-start gap-2">
+                                                <FaFileAlt className="text-pink-500 mt-1 flex-shrink-0" />
+                                                <span className="text-gray-700">{doc}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Benefits */}
+                            <div className="bg-gradient-to-r from-red-50 via-pink-50 to-purple-50 p-6 rounded-xl border border-red-200/30">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                    <FaCheckCircle className="text-red-600" />
+                                    <span className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">Key Benefits</span>
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {service.benefits.map((benefit, index) => (
+                                        <div key={index} className="flex items-start gap-3">
+                                            <FaCheckCircle className="text-red-500 mt-1 flex-shrink-0" />
+                                            <span className="text-gray-700">{benefit}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Application Process */}
+                            <div 
+                                ref={applicationProcessRef}
+                                className="bg-white border-2 border-red-200/50 p-6 rounded-xl"
+                            >
+                                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                    <FaBuilding className="text-red-600" />
+                                    <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Our Process</span>
+                                </h3>
+                                <div className="space-y-4">
+                                    {service.process.map((step, index) => (
+                                        <div key={index} className="flex items-start gap-4">
+                                            <div className="bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-lg shadow-red-500/30">
+                                                {index + 1}
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900">{step.title}</h4>
+                                                <p className="text-gray-600">{step.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* External Links */}
+                            {service.links && service.links.length > 0 && (
+                                <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-xl border border-pink-200/30">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <FaExternalLinkAlt className="text-pink-600" />
+                                        <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Related Resources</span>
+                                    </h3>
+                                <div className="space-y-3">
+                                    {service.links.map((link, index) => (
+                                        <a
+                                            key={index}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-3 p-3 bg-white rounded-lg hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 transition-colors border border-gray-200 hover:border-red-300"
+                                        >
+                                            <FaExternalLinkAlt className="text-red-600" />
+                                            <div>
+                                                <p className="font-semibold text-gray-900">{link.title}</p>
+                                                <p className="text-sm text-gray-600">{link.description}</p>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                            )}
+
+                            {/* Book Consultant Button */}
+                            <div className="text-center pt-6 border-t-2 border-red-200/50">
+                                <button
+                                    onClick={() => setShowBookConsultant(true)}
+                                    className="bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-red-600 hover:via-pink-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-red-500/40 flex items-center gap-3 mx-auto"
+                                >
+                                    <FaHandshake />
+                                    Get Started Today
+                                </button>
+                                <p className="text-gray-600 text-sm mt-2">
+                                    Get personalized guidance from our technology experts
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Book Consultant Modal */}
+                    <AnimatePresence>
+                        {showBookConsultant && (
+                            <motion.div
+                                className="fixed inset-0 z-60 flex items-center justify-center p-4"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                            >
+                                <motion.div
+                                    className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                                    onClick={() => setShowBookConsultant(false)}
+                                />
+                                <motion.div
+                                    className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-6"
+                                    initial={{ scale: 0.9, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    exit={{ scale: 0.9, opacity: 0 }}
+                                >
+                                    <div className="flex items-center justify-between mb-6">
+                                        <h3 className="text-xl font-bold text-gray-900">Book Free Consultation</h3>
+                                        <button
+                                            onClick={() => setShowBookConsultant(false)}
+                                            className="p-2 hover:bg-gray-100 rounded-full"
+                                        >
+                                            <FaTimes className="text-gray-500" />
+                                        </button>
+                                    </div>
+                                    
+                                    <form onSubmit={handleConsultantSubmit} className="space-y-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                value={consultantForm.name}
+                                                onChange={(e) => setConsultantForm({...consultantForm, name: e.target.value})}
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                            <input
+                                                type="email"
+                                                required
+                                                value={consultantForm.email}
+                                                onChange={(e) => setConsultantForm({...consultantForm, email: e.target.value})}
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                                            <input
+                                                type="tel"
+                                                required
+                                                value={consultantForm.phone}
+                                                onChange={(e) => setConsultantForm({...consultantForm, phone: e.target.value})}
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+                                            <input
+                                                type="text"
+                                                value={consultantForm.service}
+                                                readOnly
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                            <textarea
+                                                value={consultantForm.message}
+                                                onChange={(e) => setConsultantForm({...consultantForm, message: e.target.value})}
+                                                rows={3}
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            className="w-full bg-gradient-to-r from-[#1D4ED8] to-[#1D4ED8] text-white py-3 rounded-lg font-semibold hover:from-[#1E40AF] hover:to-[#1E40AF] transition-all duration-200"
+                                        >
+                                            Submit Request
+                                        </button>
+                                    </form>
+                                </motion.div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
+            )}
+
+            {/* FormModal */}
+            <FormModal
+                open={showBookConsultant}
+                onClose={() => {
+                    setShowBookConsultant(false);
+                    // Keep ServiceModal open when FormModal is closed
+                }}
+            />
+        </AnimatePresence>
+    );
+};
+
+ServiceModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    service: PropTypes.shape({
+        name: PropTypes.string,
+        description: PropTypes.string,
+        icon: PropTypes.string,
+        amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        processingTime: PropTypes.string,
+        interestRate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        validity: PropTypes.string,
+        eligibility: PropTypes.arrayOf(PropTypes.string),
+        documents: PropTypes.arrayOf(PropTypes.string),
+        benefits: PropTypes.arrayOf(PropTypes.string),
+        process: PropTypes.arrayOf(PropTypes.string),
+        links: PropTypes.arrayOf(PropTypes.shape({
+            title: PropTypes.string,
+            url: PropTypes.string
+        }))
+    })
+};
+
+export default ServiceModal;

@@ -1,0 +1,236 @@
+/* Custom CSS Variables for Gradient Themes */
+:root {
+  /* Primary Brand Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-warning: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-error: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  
+  /* Tech Gradients */
+  --gradient-cyber: linear-gradient(135deg, #00ff88 0%, #00d4aa 100%);
+  --gradient-data: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  --gradient-cloud: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  --gradient-ai: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+  --gradient-blockchain: linear-gradient(135deg, #96ceb4 0%, #feca57 100%);
+  --gradient-iot: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+  
+  /* Premium Gradients */
+  --gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --gradient-luxury: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #e74c3c 100%);
+  --gradient-royal: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+  --gradient-sunset: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  --gradient-ocean: linear-gradient(135deg, #2196f3 0%, #21cbf3 100%);
+  --gradient-forest: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+  --gradient-fire: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  --gradient-ice: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  
+  /* Dark Gradients */
+  --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --gradient-midnight: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  --gradient-charcoal: linear-gradient(135deg, #434343 0%, #000000 100%);
+  
+  /* Animated Gradients */
+  --gradient-animated-1: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  --gradient-animated-2: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  --gradient-animated-3: linear-gradient(-45deg, #ff9a9e, #fecfef, #fecfef, #fecfef);
+  
+  /* Glass Morphism */
+  --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --glass-dark: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+  
+  /* Navbar Specific Gradients */
+  --navbar-home: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --navbar-company: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #e74c3c 100%);
+  --navbar-services: linear-gradient(135deg, #00ff88 0%, #00d4aa 100%);
+  --navbar-career: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --navbar-blogs: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+  --navbar-contact: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  
+  /* Underline Gradients */
+  --underline-home: linear-gradient(90deg, #06b6d4, #3b82f6);
+  --underline-company: linear-gradient(90deg, #a855f7, #ec4899);
+  --underline-services: linear-gradient(90deg, #10b981, #059669);
+  --underline-career: linear-gradient(90deg, #f59e0b, #f97316);
+  --underline-blogs: linear-gradient(90deg, #3b82f6, #06b6d4);
+  --underline-contact: linear-gradient(90deg, #ef4444, #ec4899);
+  
+  /* Glow Effects */
+  --glow-cyber: 0 0 20px rgba(0, 255, 136, 0.4);
+  --glow-data: 0 0 20px rgba(255, 107, 107, 0.4);
+  --glow-cloud: 0 0 20px rgba(78, 205, 196, 0.4);
+  --glow-ai: 0 0 20px rgba(69, 183, 209, 0.4);
+  --glow-primary: 0 0 20px rgba(102, 126, 234, 0.4);
+  --glow-luxury: 0 0 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Custom Gradient Classes */
+.gradient-premium {
+  background: var(--gradient-premium);
+}
+
+.gradient-luxury {
+  background: var(--gradient-luxury);
+}
+
+.gradient-cyber {
+  background: var(--gradient-cyber);
+}
+
+.gradient-ai {
+  background: var(--gradient-ai);
+}
+
+.gradient-fire {
+  background: var(--gradient-fire);
+}
+
+.gradient-success {
+  background: var(--gradient-success);
+}
+
+/* Animated Gradient Backgrounds */
+.gradient-animated-1 {
+  background: var(--gradient-animated-1);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.gradient-animated-2 {
+  background: var(--gradient-animated-2);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.gradient-animated-3 {
+  background: var(--gradient-animated-3);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Glass Morphism Effects */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-dark {
+  background: var(--glass-dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Glow Effects */
+.glow-cyber {
+  box-shadow: var(--glow-cyber);
+}
+
+.glow-data {
+  box-shadow: var(--glow-data);
+}
+
+.glow-cloud {
+  box-shadow: var(--glow-cloud);
+}
+
+.glow-ai {
+  box-shadow: var(--glow-ai);
+}
+
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-luxury {
+  box-shadow: var(--glow-luxury);
+}
+
+/* Keyframe Animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Utility Classes */
+.text-gradient-premium {
+  background: var(--gradient-premium);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyber {
+  background: var(--gradient-cyber);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-ai {
+  background: var(--gradient-ai);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-fire {
+  background: var(--gradient-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Effects */
+.hover-glow:hover {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hover-float:hover {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive Gradient Adjustments */
+@media (max-width: 768px) {
+  :root {
+    --navbar-home: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --navbar-company: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    --navbar-services: linear-gradient(135deg, #00ff88 0%, #00d4aa 100%);
+    --navbar-career: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --navbar-blogs: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+    --navbar-contact: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --glass-dark: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+  }
+}
