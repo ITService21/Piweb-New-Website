@@ -76,10 +76,10 @@ const ServiceModal = ({ isOpen, onClose, service }) => {
                         host: "mail.piwebtechnology.com",
                         port: 587,
                         secure: false,
-                        user: "admin@piwebtechnology.com",
-                        pass: "751821@Ss"
+                        user: "sumit@piwebtechnology.com",
+                        pass: "cvkzxxpvgejtejkj"
                     },
-                    to: "admin@piwebtechnology.com",
+                    to: "sumit@piwebtechnology.com",
                     subject: `Book Consultant - ${service?.name}`,
                     fields: consultantForm
                 })
