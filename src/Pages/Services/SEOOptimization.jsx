@@ -1,49 +1,42 @@
-// src/pages/services/AIML.jsx  (replace your file with this)
+// src/pages/services/SEOOptimization.jsx
 import { useState, useEffect } from "react";
 import { useSpring, animated, useTrail, config } from "@react-spring/web";
 import Navbar from "../../Components/Navbar";
 import { useModal } from "../../Context/ModalContext";
 import AnimatedTechBackground from "../../Components/AnimatedTechBackground";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  FaBrain,
-  FaRobot,
+  FaSearch,
   FaChartLine,
-  FaEye,
-  FaComments,
-  FaCog,
+  FaCode,
+  FaLink,
+  FaFileAlt,
+  FaMobileAlt,
   FaUsers,
   FaCheckCircle,
   FaArrowRight,
   FaRocket,
   FaShieldAlt,
-  FaDatabase,
-  FaMicrochip,
-  FaNetworkWired,
-  FaPalette,
+  FaGlobe,
+  FaBullhorn,
+  FaLightbulb,
   FaShoppingCart,
   FaGraduationCap,
   FaHeart,
   FaAward,
-  FaPlay
+  FaTrophy,
+  FaGoogle,
+  FaSearchengin,
+  FaCog,
+  FaPalette
 } from "react-icons/fa";
 
-// Fallback stats used when the parent `stats` numbers are not populated yet.
-// Placing at module scope avoids re-declaration and hook dependency warnings.
-const AIML_STATS_FALLBACK = [95, 80, 70, 50];
-
-/**
- * Key fixes applied:
- * - Inserted <AnimatedTechBackground variant="light" /> inside every section wrapper.
- * - Fixed trail/spring animation triggers (removed immediate toggling) so animations play on intersection.
- * - Ensured each animated block uses the intersection ref so animations start when visible.
- * - Added gradient overlay elements on cards (absolute inset-0) with hover opacity transitions for better gradients.
- * - Kept your layout & content; only animation/visual fixes were applied.
- */
+// Fallback stats
+const SEO_STATS_FALLBACK = [150, 85, 95, 200];
 
 /* -------------------- Overview Content -------------------- */
-const OverviewContentAIML = () => {
+const OverviewContentSEO = () => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const spring = useSpring({
@@ -55,31 +48,31 @@ const OverviewContentAIML = () => {
   return (
     <animated.div ref={ref} style={spring}>
       <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-        <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-          AI-Driven Business Solutions
+        <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+          SEO Solutions That Drive Results
         </span>
       </h2>
       <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-        We develop cutting-edge AI and machine learning solutions that automate processes,
-        extract valuable insights from data, and enhance decision-making capabilities across
-        various industries.
+        We provide comprehensive SEO optimization services that boost your search rankings,
+        increase organic traffic, and convert visitors into customers. Our data-driven approach
+        ensures measurable results and sustainable growth.
       </p>
       <p className="text-gray-600 mb-8 leading-relaxed">
-        Our AI experts combine deep technical knowledge with business acumen to deliver
-        intelligent solutions that drive real business value and competitive advantage.
+        Our SEO experts combine technical expertise with creative content strategies to deliver
+        top rankings on Google and other search engines, helping your business dominate the digital landscape.
       </p>
       <div className="flex flex-wrap gap-4">
-        <div className="flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-2 rounded-full hover:scale-105 transition-transform">
+        <div className="flex items-center gap-2 bg-gradient-to-r from-red-50 to-pink-50 px-4 py-2 rounded-full hover:scale-105 transition-transform">
           <FaCheckCircle className="text-green-500" />
-          <span className="text-gray-700 font-medium">Custom AI Models</span>
+          <span className="text-gray-700 font-medium">Higher Rankings</span>
         </div>
-        <div className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-2 rounded-full hover:scale-105 transition-transform">
+        <div className="flex items-center gap-2 bg-gradient-to-r from-pink-50 to-purple-50 px-4 py-2 rounded-full hover:scale-105 transition-transform">
           <FaCheckCircle className="text-green-500" />
-          <span className="text-gray-700 font-medium">Real-time Processing</span>
+          <span className="text-gray-700 font-medium">Increased Traffic</span>
         </div>
-        <div className="flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-2 rounded-full hover:scale-105 transition-transform">
+        <div className="flex items-center gap-2 bg-gradient-to-r from-orange-50 to-red-50 px-4 py-2 rounded-full hover:scale-105 transition-transform">
           <FaCheckCircle className="text-green-500" />
-          <span className="text-gray-700 font-medium">Scalable Solutions</span>
+          <span className="text-gray-700 font-medium">Better Conversions</span>
         </div>
       </div>
     </animated.div>
@@ -87,7 +80,7 @@ const OverviewContentAIML = () => {
 };
 
 /* -------------------- CTA -------------------- */
-const CTASectionAIML = ({ openModal }) => {
+const CTASectionSEO = ({ openModal }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-100px" });
 
   const spring = useSpring({
@@ -98,32 +91,29 @@ const CTASectionAIML = ({ openModal }) => {
   });
 
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-red-500 via-pink-500 to-purple-500 relative overflow-hidden">
       <AnimatedTechBackground variant="dark" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
         <animated.div
           ref={ref}
           style={spring}
           className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-12 shadow-xl"
-         >
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Let's Power Your Business with AI
+            Ready to Rank #1 on Google?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Transform your business with intelligent automation and data-driven insights.
+            Let's boost your search rankings and drive more organic traffic to your website.
           </p>
-<div className="flex flex-col sm:flex-row gap-4 justify-center">
-  {/* Get Started → open FormModal */}
-  <button
-    onClick={openModal}
-    className="px-8 py-4 bg-white text-purple-700 font-bold rounded-xl hover:shadow-2xl hover:shadow-white/40 transition-all duration-300 flex items-center gap-2 group hover:scale-105 hover:-translate-y-1"
-  >
-    Get Started
-    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-  </button>
- 
-</div>
-
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={openModal}
+              className="px-8 py-4 bg-white text-pink-600 font-bold rounded-xl hover:shadow-2xl hover:shadow-white/40 transition-all duration-300 flex items-center gap-2 group hover:scale-105 hover:-translate-y-1"
+            >
+              Get Started
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </animated.div>
       </div>
     </section>
@@ -131,47 +121,47 @@ const CTASectionAIML = ({ openModal }) => {
 };
 
 /* -------------------- Why Choose Us -------------------- */
-const WhyChooseUsSectionAIML = () => {
+const WhyChooseUsSectionSEO = () => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const items = [
     {
-      icon: FaBrain,
-      title: "Deep AI Expertise",
+      icon: FaTrophy,
+      title: "Proven Track Record",
       description:
-        "Our team includes PhD-level data scientists and AI researchers with cutting-edge knowledge.",
-      color: "from-purple-500 to-pink-500"
+        "150+ successful SEO campaigns with an average 85% increase in organic traffic.",
+      color: "from-red-500 to-pink-500"
     },
     {
       icon: FaRocket,
-      title: "Proven Results",
-      description: "95% model accuracy and 80% process efficiency improvements for our clients.",
-      color: "from-blue-500 to-cyan-500"
+      title: "Fast Results",
+      description: "See measurable improvements within 30-60 days with our aggressive SEO strategies.",
+      color: "from-pink-500 to-purple-500"
     },
     {
       icon: FaShieldAlt,
-      title: "Secure & Compliant",
+      title: "White-Hat Techniques",
       description:
-        "Enterprise-grade security and compliance with GDPR, HIPAA, and industry standards.",
-      color: "from-green-500 to-emerald-500"
+        "100% Google-compliant strategies that protect your website from penalties.",
+      color: "from-purple-500 to-indigo-500"
     },
     {
       icon: FaUsers,
       title: "Expert Team",
-      description: "Certified AI engineers and data scientists with 10+ years of combined experience.",
-      color: "from-indigo-500 to-purple-500"
+      description: "Certified SEO specialists with 10+ years of combined experience.",
+      color: "from-indigo-500 to-blue-500"
     },
     {
       icon: FaChartLine,
-      title: "Scalable Solutions",
-      description: "AI solutions that grow with your business, from startups to enterprise scale.",
-      color: "from-red-500 to-pink-500"
+      title: "Data-Driven Approach",
+      description: "Advanced analytics and reporting to track ROI and optimize performance.",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: FaAward,
       title: "Industry Recognition",
-      description: "Award-winning AI solutions recognized by leading technology organizations.",
-      color: "from-yellow-500 to-orange-500"
+      description: "Award-winning SEO services recognized by leading marketing organizations.",
+      color: "from-orange-500 to-red-500"
     }
   ];
 
@@ -195,13 +185,13 @@ const WhyChooseUsSectionAIML = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <animated.div ref={ref} style={headerSpring} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Why Choose Our AI & ML Services?
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+              Why Choose Our SEO Services?
             </span>
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leading AI expertise that transforms businesses across industries
+            Leading SEO expertise that transforms online visibility and drives business growth
           </p>
         </animated.div>
 
@@ -211,7 +201,6 @@ const WhyChooseUsSectionAIML = () => {
             return (
               <animated.div key={index} style={style} className="group">
                 <div className="relative bg-white rounded-3xl p-8 border border-gray-200 transition-all duration-300 group-hover:shadow-2xl shadow-lg h-full overflow-hidden transform group-hover:-translate-y-2">
-                  {/* gradient overlay for richer look */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${items[index].color} opacity-0 group-hover:opacity-25 rounded-3xl transition-opacity duration-300 pointer-events-none`}
                   />
@@ -221,7 +210,7 @@ const WhyChooseUsSectionAIML = () => {
                     >
                       <IconComponent className="text-2xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-pink-600 transition-colors duration-300">
                       {items[index].title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">{items[index].description}</p>
@@ -237,9 +226,7 @@ const WhyChooseUsSectionAIML = () => {
 };
 
 /* -------------------- Stats -------------------- */
-// Accepts `stats` prop (array) where each item is { number, label, icon, suffix }
-// Animates numeric values locally when the section becomes visible.
-const StatsSectionAIML = ({ stats = [] }) => {
+const StatsSectionSEO = ({ stats = [] }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const trail = useTrail(stats.length, {
@@ -256,10 +243,8 @@ const StatsSectionAIML = ({ stats = [] }) => {
     config: config.slow
   });
 
-  // Local animated numbers so they increment when the section enters the viewport
   const [animatedNumbers, setAnimatedNumbers] = useState(() => stats.map(() => 0));
 
-  // When stats prop changes, reset animatedNumbers to zeros (so re-entries re-animate)
   useEffect(() => {
     setAnimatedNumbers(stats.map(() => 0));
   }, [stats]);
@@ -267,16 +252,14 @@ const StatsSectionAIML = ({ stats = [] }) => {
   useEffect(() => {
     if (!isVisible) return;
 
-    const duration = 1500; // ms
+    const duration = 1500;
     const steps = 60;
     const stepDuration = Math.max(8, Math.floor(duration / steps));
     const timers = [];
 
     stats.forEach((s, idx) => {
-      // Prefer an explicit positive number from the incoming stats; otherwise use
-      // the fallback target for a better UX than animating to 0.
-  const parsed = Number(s.number);
-  const target = parsed > 0 ? parsed : (AIML_STATS_FALLBACK[idx] || 0);
+      const parsed = Number(s.number);
+      const target = parsed > 0 ? parsed : (SEO_STATS_FALLBACK[idx] || 0);
       let current = 0;
       const increment = target / steps;
       const t = setInterval(() => {
@@ -298,13 +281,13 @@ const StatsSectionAIML = ({ stats = [] }) => {
   }, [isVisible, stats]);
 
   return (
-    <section id="ai-stats" className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <section id="seo-stats" className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
       <AnimatedTechBackground variant="dark" />
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <animated.div ref={ref} style={headerSpring} className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">AI Performance Metrics</h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">Proven results from our AI implementations</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">SEO Performance Metrics</h2>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">Proven results from our SEO campaigns</p>
         </animated.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -314,9 +297,9 @@ const StatsSectionAIML = ({ stats = [] }) => {
             const displayNumber = animatedNumbers[index] ?? stat.number ?? 0;
             return (
               <animated.div key={index} style={style} className="text-center group">
-                <div className="relative bg-gradient-to-br from-gray-800/80 to-black/80 backdrop-blur-sm border border-purple-500/30 rounded-3xl p-8 transition-all duration-300 group-hover:shadow-xl transform group-hover:-translate-y-2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="relative bg-gradient-to-br from-gray-800/80 to-black/80 backdrop-blur-sm border border-pink-500/30 rounded-3xl p-8 transition-all duration-300 group-hover:shadow-xl transform group-hover:-translate-y-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 rounded-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="text-2xl text-white" />
                   </div>
                   <div className="text-4xl font-bold text-white mb-2">
@@ -335,7 +318,7 @@ const StatsSectionAIML = ({ stats = [] }) => {
 };
 
 /* -------------------- Tech Stack -------------------- */
-const TechStackSectionAIML = ({ technologies }) => {
+const TechStackSectionSEO = ({ technologies }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const trail = useTrail(technologies.length, {
@@ -357,10 +340,10 @@ const TechStackSectionAIML = ({ technologies }) => {
       <div className="max-w-7xl mx-auto px-4">
         <animated.div ref={ref} style={headerSpring} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">AI Technologies</span>
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">SEO Tools & Technologies</span>
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Cutting-edge AI and machine learning frameworks and tools</p>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Industry-leading SEO tools and analytics platforms</p>
         </animated.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
@@ -373,7 +356,7 @@ const TechStackSectionAIML = ({ technologies }) => {
                   <div className={`w-12 h-12 bg-gradient-to-br ${technologies[index].color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="text-lg text-white" />
                   </div>
-                  <h4 className="text-sm font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">{technologies[index].name}</h4>
+                  <h4 className="text-sm font-bold text-gray-800 group-hover:text-pink-600 transition-colors duration-300">{technologies[index].name}</h4>
                 </div>
               </animated.div>
             );
@@ -385,7 +368,7 @@ const TechStackSectionAIML = ({ technologies }) => {
 };
 
 /* -------------------- Case Study -------------------- */
-const CaseStudySectionAIML = ({ caseStudy }) => {
+const CaseStudySectionSEO = ({ caseStudy }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const contentSpring = useSpring({
@@ -412,10 +395,10 @@ const CaseStudySectionAIML = ({ caseStudy }) => {
       <div className="max-w-7xl mx-auto px-4">
         <animated.div ref={ref} style={{ opacity: isVisible ? 1 : 0 }} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Success Story</span>
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Success Story</span>
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real results from our AI implementations</p>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real results from our SEO campaigns</p>
         </animated.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -424,8 +407,8 @@ const CaseStudySectionAIML = ({ caseStudy }) => {
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">{caseStudy.description}</p>
             <div className="grid grid-cols-2 gap-6">
               {resultsTrail.map((style, index) => (
-                <animated.div key={index} style={style} className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">{caseStudy.results[index].metric}</div>
+                <animated.div key={index} style={style} className="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-6 text-center">
+                  <div className="text-3xl font-bold text-pink-600 mb-2">{caseStudy.results[index].metric}</div>
                   <div className="text-gray-600 font-medium">{caseStudy.results[index].label}</div>
                 </animated.div>
               ))}
@@ -433,7 +416,7 @@ const CaseStudySectionAIML = ({ caseStudy }) => {
           </animated.div>
 
           <animated.div style={imageSpring} className="relative">
-            <img src={caseStudy.image} alt="AI Implementation Results" className="w-full h-96 object-cover rounded-3xl shadow-2xl" />
+            <img src={caseStudy.image} alt="SEO Results" className="w-full h-96 object-cover rounded-3xl shadow-2xl" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl" />
           </animated.div>
         </div>
@@ -443,7 +426,7 @@ const CaseStudySectionAIML = ({ caseStudy }) => {
 };
 
 /* -------------------- Services -------------------- */
-const ServicesSectionAIML = ({ services }) => {
+const ServicesSectionSEO = ({ services }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const trail = useTrail(services.length, {
@@ -466,10 +449,10 @@ const ServicesSectionAIML = ({ services }) => {
       <div className="max-w-7xl mx-auto px-4">
         <animated.div ref={ref} style={headerSpring} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">What We Offer</span>
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Our SEO Services</span>
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive AI and machine learning services tailored to your business needs</p>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive SEO solutions tailored to your business goals</p>
         </animated.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -483,7 +466,7 @@ const ServicesSectionAIML = ({ services }) => {
                     <div className={`w-16 h-16 bg-gradient-to-br ${services[index].color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="text-2xl text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">{services[index].title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-pink-600 transition-colors duration-300">{services[index].title}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{services[index].description}</p>
                     <div className="grid grid-cols-2 gap-2">
                       {services[index].features.map((feature, featureIndex) => (
@@ -505,7 +488,7 @@ const ServicesSectionAIML = ({ services }) => {
 };
 
 /* -------------------- Industries -------------------- */
-const IndustriesSectionAIML = ({ industries }) => {
+const IndustriesSectionSEO = ({ industries }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
 
   const trail = useTrail(industries.length, {
@@ -528,10 +511,10 @@ const IndustriesSectionAIML = ({ industries }) => {
       <div className="max-w-7xl mx-auto px-4">
         <animated.div ref={ref} style={headerSpring} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Industries We Serve</span>
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Industries We Serve</span>
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">AI solutions across diverse industries and sectors</p>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">SEO solutions across diverse industries and sectors</p>
         </animated.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -545,12 +528,12 @@ const IndustriesSectionAIML = ({ industries }) => {
                     <div className={`w-16 h-16 bg-gradient-to-br ${industries[index].color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="text-2xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">{industries[index].name}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-pink-600 transition-colors duration-300">{industries[index].name}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{industries[index].description}</p>
                     <div className="space-y-2">
                       {industries[index].applications.map((app, appIndex) => (
                         <div key={appIndex} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
+                          <div className="w-2 h-2 bg-gradient-to-r from-red-500 to-pink-500 rounded-full" />
                           <span className="text-sm text-gray-600">{app}</span>
                         </div>
                       ))}
@@ -567,9 +550,9 @@ const IndustriesSectionAIML = ({ industries }) => {
 };
 
 /* -------------------- Hero / Overview Image / HeroContent -------------------- */
-const OverviewImageAIML = () => {
-    const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
-  
+const OverviewImageSEO = () => {
+  const [ref, isVisible] = useIntersectionObserver({ margin: "-200px" });
+
   const spring = useSpring({
     opacity: isVisible ? 1 : 0,
     x: isVisible ? 0 : 50,
@@ -583,17 +566,17 @@ const OverviewImageAIML = () => {
         transition={{ type: "spring", stiffness: 220, damping: 18 }}
         className="relative"
       >
-        <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-blue-300 via-blue-300 to-blue-300 opacity-70 blur-xl" />
+        <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-red-300 via-pink-300 to-purple-300 opacity-70 blur-xl" />
         <div className="relative">
           <img 
-          src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="Web Development Process"
+            src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="SEO Optimization"
             className="w-full h-96 object-cover rounded-3xl shadow-2xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
           <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 hover:scale-[1.02] transition-transform card-gradient-border">
-          <h3 className="text-xl font-bold text-gray-800 mb-2">Intelligent Automation</h3>
-          <p className="text-gray-600">AI-powered business solutions</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Top Rankings Guaranteed</h3>
+            <p className="text-gray-600">SEO strategies that deliver results</p>
           </div>
         </div>
       </motion.div>
@@ -601,7 +584,7 @@ const OverviewImageAIML = () => {
   );
 };
 
-const HeroContentAIML = ({ openModal }) => {
+const HeroContentSEO = ({ openModal }) => {
   const [ref, isVisible] = useIntersectionObserver({ margin: "-50px" });
 
   const heroSpring = useSpring({
@@ -631,39 +614,39 @@ const HeroContentAIML = ({ openModal }) => {
   return (
     <animated.div ref={ref} style={heroSpring}>
       <animated.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6" style={titleSpring}>
-        <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">AI & Machine</span>
+        <span className="bg-gradient-to-r from-white via-pink-200 to-white bg-clip-text text-transparent">SEO Optimization</span>
         <br />
-        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Learning Solutions</span>
+        <span className="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">That Drives Growth</span>
       </animated.h1>
 
-      <animated.p className="text-xl sm:text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed mb-8" style={textSpring}>
-        Harness the power of <span className="text-purple-300 font-bold">artificial intelligence</span> to
-        transform your business with <span className="text-pink-300 font-bold">intelligent automation</span> and insights.
+      <animated.p className="text-xl sm:text-2xl text-pink-100 max-w-4xl mx-auto leading-relaxed mb-8" style={textSpring}>
+        Dominate search rankings with <span className="text-pink-300 font-bold">data-driven SEO strategies</span> that
+        increase visibility and <span className="text-red-300 font-bold">drive qualified traffic</span>.
       </animated.p>
 
       <animated.div
-        className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md border border-purple-400/30 rounded-full px-6 py-3 shadow-xl"
+        className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500/20 to-pink-500/20 backdrop-blur-md border border-pink-400/30 rounded-full px-6 py-3 shadow-xl"
         style={badgeSpring}
       >
-        <FaBrain className="text-purple-400 text-xl" />
-        <span className="text-purple-300 font-bold">INTELLIGENT • AUTOMATED • FUTURE-READY</span>
+        <FaSearch className="text-pink-400 text-xl" />
+        <span className="text-pink-300 font-bold">OPTIMIZED • RANKED • DISCOVERED</span>
       </animated.div>
     </animated.div>
   );
 };
 
 /* -------------------- Main Page -------------------- */
-const AIML = () => {
+const SEOOptimization = () => {
   const { openModal } = useModal();
   const [counters, setCounters] = useState({
-    accuracy: 0,
-    efficiency: 0,
-    automation: 0,
+    traffic: 0,
+    ranking: 0,
+    conversion: 0,
     clients: 0
   });
 
   useEffect(() => {
-    document.title = "AI & ML Services - Piweb Tech | Power Your Business with Artificial Intelligence";
+    document.title = "SEO Optimization Services - Piweb Tech | Rank #1 on Google";
     const setMeta = (name, content) => {
       let el = document.querySelector(`meta[name="${name}"]`);
       if (!el) {
@@ -673,13 +656,12 @@ const AIML = () => {
       }
       el.setAttribute("content", content);
     };
-    setMeta("description", "Transform your business with AI and Machine Learning solutions. Predictive analytics, intelligent chatbots, computer vision, and NLP services. Industry-leading AI expertise.");
-    setMeta("keywords", "AI services, machine learning, artificial intelligence, predictive analytics, chatbots, computer vision, NLP, AI consulting");
+    setMeta("description", "Professional SEO optimization services that boost rankings, increase organic traffic, and drive conversions. Get found by customers searching for your services.");
+    setMeta("keywords", "SEO services, search engine optimization, SEO consultant, Google ranking, organic traffic, keyword research, link building, local SEO");
   }, []);
 
   useEffect(() => {
-    // intersection observer for stats counter is handled by StatsSection's local observer (but keep global fallback)
-    const targets = { accuracy: 95, efficiency: 80, automation: 70, clients: 50 };
+    const targets = { traffic: 150, ranking: 85, conversion: 95, clients: 200 };
     const duration = 2000;
     const steps = 60;
     const stepDuration = duration / steps;
@@ -699,8 +681,7 @@ const AIML = () => {
       });
     };
 
-    // start immediately if user lands on page near stats; otherwise individual section handles it
-    const el = document.getElementById("ai-stats");
+    const el = document.getElementById("seo-stats");
     if (el && el.getBoundingClientRect().top < window.innerHeight) {
       animate();
     }
@@ -708,94 +689,94 @@ const AIML = () => {
 
   const services = [
     {
-      icon: FaChartLine,
-      title: "Predictive Analytics",
-      description: "Leverage machine learning to forecast trends, predict customer behavior, and make data-driven decisions.",
-      color: "from-blue-500 to-cyan-500",
-      features: ["Sales Forecasting", "Customer Analytics", "Risk Assessment", "Market Trends"]
-    },
-    {
-      icon: FaComments,
-      title: "Intelligent Chatbots",
-      description: "AI-powered conversational agents that provide 24/7 customer support and automate routine interactions.",
-      color: "from-green-500 to-emerald-500",
-      features: ["Natural Language Processing", "Multi-language Support", "Context Awareness", "Integration Ready"]
-    },
-    {
-      icon: FaEye,
-      title: "Computer Vision",
-      description: "Advanced image and video analysis for object detection, facial recognition, and automated visual inspection.",
-      color: "from-purple-500 to-pink-500",
-      features: ["Object Detection", "Facial Recognition", "Quality Control", "Medical Imaging"]
-    },
-    {
-      icon: FaBrain,
-      title: "Natural Language Processing",
-      description: "Extract insights from text data, sentiment analysis, and automated content generation.",
+      icon: FaSearch,
+      title: "Keyword Research & Strategy",
+      description: "Identify high-value keywords that drive qualified traffic and conversions to your website.",
       color: "from-red-500 to-pink-500",
-      features: ["Sentiment Analysis", "Text Classification", "Language Translation", "Content Generation"]
+      features: ["Competitor Analysis", "Search Volume Research", "Long-tail Keywords", "Keyword Mapping"]
+    },
+    {
+      icon: FaCode,
+      title: "Technical SEO",
+      description: "Optimize your website's technical foundation for better crawling, indexing, and performance.",
+      color: "from-pink-500 to-purple-500",
+      features: ["Site Speed Optimization", "Mobile-First Design", "Schema Markup", "XML Sitemaps"]
+    },
+    {
+      icon: FaFileAlt,
+      title: "Content Optimization",
+      description: "Create and optimize high-quality content that ranks well and engages your target audience.",
+      color: "from-purple-500 to-indigo-500",
+      features: ["Content Writing", "On-Page SEO", "Meta Tags", "Header Optimization"]
+    },
+    {
+      icon: FaLink,
+      title: "Link Building",
+      description: "Build high-authority backlinks that boost your domain authority and search rankings.",
+      color: "from-indigo-500 to-blue-500",
+      features: ["Quality Backlinks", "Guest Posting", "Outreach Campaigns", "Link Analysis"]
     }
   ];
 
   const industries = [
     {
+      name: "E-Commerce",
+      icon: FaShoppingCart,
+      description: "SEO strategies that increase product visibility and drive online sales.",
+      color: "from-red-500 to-pink-500",
+      applications: ["Product SEO", "Category Optimization", "Shopping Feed", "Local Inventory"]
+    },
+    {
       name: "Healthcare",
       icon: FaHeart,
-      description: "AI-powered diagnostics, drug discovery, and patient care optimization.",
-      color: "from-red-500 to-pink-500",
-      applications: ["Medical Imaging", "Drug Discovery", "Patient Monitoring", "Diagnosis Support"]
+      description: "Medical SEO that helps patients find your practice online.",
+      color: "from-pink-500 to-purple-500",
+      applications: ["Local Healthcare SEO", "Medical Content", "HIPAA Compliance", "Reviews Management"]
     },
     {
-      name: "Retail",
-      icon: FaShoppingCart,
-      description: "Personalized recommendations, inventory optimization, and customer behavior analysis.",
-      color: "from-blue-500 to-cyan-500",
-      applications: ["Recommendation Systems", "Inventory Management", "Price Optimization", "Customer Analytics"]
+      name: "Real Estate",
+      icon: FaGlobe,
+      description: "Property SEO that attracts buyers and renters to your listings.",
+      color: "from-purple-500 to-indigo-500",
+      applications: ["Property Listings", "Local SEO", "Virtual Tours", "Neighborhood Pages"]
     },
     {
-      name: "Finance",
-      icon: FaChartLine,
-      description: "Fraud detection, algorithmic trading, and risk assessment.",
-      color: "from-green-500 to-emerald-500",
-      applications: ["Fraud Detection", "Algorithmic Trading", "Credit Scoring", "Risk Management"]
-    },
-    {
-      name: "Education",
+      name: "Professional Services",
       icon: FaGraduationCap,
-      description: "Personalized learning, automated grading, and educational content generation.",
-      color: "from-purple-500 to-pink-500",
-      applications: ["Personalized Learning", "Automated Grading", "Content Generation", "Student Analytics"]
+      description: "B2B SEO strategies for consultants, agencies, and service providers.",
+      color: "from-indigo-500 to-blue-500",
+      applications: ["Thought Leadership", "Case Studies", "Service Pages", "Lead Generation"]
     }
   ];
 
   const technologies = [
-    { name: "TensorFlow", icon: FaBrain, color: "from-red-500 to-pink-500" },
-    { name: "PyTorch", icon: FaMicrochip, color: "from-red-500 to-pink-500" },
-    { name: "Scikit-learn", icon: FaCog, color: "from-blue-500 to-cyan-500" },
-    { name: "OpenCV", icon: FaEye, color: "from-green-500 to-emerald-500" },
-    { name: "NLTK", icon: FaComments, color: "from-purple-500 to-pink-500" },
-    { name: "Keras", icon: FaNetworkWired, color: "from-indigo-500 to-purple-500" },
-    { name: "Pandas", icon: FaDatabase, color: "from-yellow-500 to-orange-500" },
-    { name: "NumPy", icon: FaChartLine, color: "from-cyan-500 to-blue-500" }
+    { name: "Google Analytics", icon: FaGoogle, color: "from-red-500 to-pink-500" },
+    { name: "Search Console", icon: FaSearchengin, color: "from-pink-500 to-purple-500" },
+    { name: "SEMrush", icon: FaChartLine, color: "from-purple-500 to-indigo-500" },
+    { name: "Ahrefs", icon: FaLink, color: "from-indigo-500 to-blue-500" },
+    { name: "Moz Pro", icon: FaTrophy, color: "from-blue-500 to-cyan-500" },
+    { name: "Screaming Frog", icon: FaCog, color: "from-cyan-500 to-teal-500" },
+    { name: "GTmetrix", icon: FaRocket, color: "from-green-500 to-emerald-500" },
+    { name: "Schema.org", icon: FaPalette, color: "from-orange-500 to-red-500" }
   ];
 
   const caseStudy = {
-    title: "E-Commerce Recommendation Engine",
-    description: "Implemented a machine learning system that increased customer engagement by 40% and boosted sales by 25%.",
+    title: "E-Commerce Store Traffic Growth",
+    description: "Implemented comprehensive SEO strategy that increased organic traffic by 150% and boosted conversion rates by 85% within 6 months.",
     results: [
-      { metric: "40%", label: "Increase in Engagement" },
-      { metric: "25%", label: "Boost in Sales" },
-      { metric: "60%", label: "Reduction in Bounce Rate" },
-      { metric: "90%", label: "Customer Satisfaction" }
+      { metric: "150%", label: "Traffic Increase" },
+      { metric: "85%", label: "Higher Conversions" },
+      { metric: "#1", label: "Google Rankings" },
+      { metric: "200+", label: "Keywords Ranked" }
     ],
-    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600"
   };
 
   const stats = [
-    { number: counters.accuracy, label: "Model Accuracy", icon: FaBrain, suffix: "%" },
-    { number: counters.efficiency, label: "Process Efficiency", icon: FaRocket, suffix: "%" },
-    { number: counters.automation, label: "Tasks Automated", icon: FaCog, suffix: "%" },
-    { number: counters.clients, label: "AI Solutions Delivered", icon: FaUsers, suffix: "+" }
+    { number: counters.traffic, label: "Avg Traffic Increase", icon: FaChartLine, suffix: "%" },
+    { number: counters.ranking, label: "Top 10 Rankings", icon: FaTrophy, suffix: "%" },
+    { number: counters.conversion, label: "Conversion Boost", icon: FaRocket, suffix: "%" },
+    { number: counters.clients, label: "Success Stories", icon: FaUsers, suffix: "+" }
   ];
 
   return (
@@ -805,25 +786,22 @@ const AIML = () => {
       {/* Hero */}
       <section className="relative py-20 sm:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-blue-500/10" />
-          {/* decorative network pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-pink-500/5 to-purple-500/10" />
           <div className="absolute inset-0 opacity-20">
             <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
               <defs>
-                <pattern id="ai-network" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
-                  <circle cx="12.5" cy="12.5" r="2" fill="rgba(147, 51, 234, 0.4)" />
+                <pattern id="seo-grid" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
+                  <circle cx="12.5" cy="12.5" r="2" fill="rgba(239, 68, 68, 0.4)" />
                   <path d="M12.5,0 L12.5,12.5 M0,12.5 L12.5,12.5" stroke="rgba(236,72,153,0.3)" strokeWidth="0.5" />
                 </pattern>
               </defs>
-              <rect width="100%" height="100%" fill="url(#ai-network)" />
+              <rect width="100%" height="100%" fill="url(#seo-grid)" />
             </svg>
           </div>
-
-          {/* animated icons / orbs / particles could remain same — keep them if you want */}
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <HeroContentAIML openModal={openModal} />
+          <HeroContentSEO openModal={openModal} />
         </div>
       </section>
 
@@ -832,34 +810,35 @@ const AIML = () => {
         <AnimatedTechBackground variant="light" />
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <OverviewContentAIML />
-            <OverviewImageAIML />
+            <OverviewContentSEO />
+            <OverviewImageSEO />
           </div>
         </div>
       </section>
 
-      {/* What We Offer */}
-      <ServicesSectionAIML services={services} />
+      {/* Services */}
+      <ServicesSectionSEO services={services} />
 
       {/* Industries */}
-      <IndustriesSectionAIML industries={industries} />
+      <IndustriesSectionSEO industries={industries} />
 
       {/* Case Study */}
-      <CaseStudySectionAIML caseStudy={caseStudy} />
+      <CaseStudySectionSEO caseStudy={caseStudy} />
 
       {/* Tech Stack */}
-      <TechStackSectionAIML technologies={technologies} />
+      <TechStackSectionSEO technologies={technologies} />
 
       {/* Stats */}
-      <StatsSectionAIML stats={stats} />
+      <StatsSectionSEO stats={stats} />
 
       {/* Why choose us */}
-      <WhyChooseUsSectionAIML />
+      <WhyChooseUsSectionSEO />
 
       {/* CTA */}
-      <CTASectionAIML openModal={openModal} />
+      <CTASectionSEO openModal={openModal} />
     </div>
   );
 };
 
-export default AIML;
+export default SEOOptimization;
+

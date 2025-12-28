@@ -55,7 +55,7 @@ const sampleData = {
   ],
   faqs: [
     { q: "Do you work with startups?", a: "Yes — we help startups build their digital presence fast." },
-    { q: "Where are you located?", a: "Headquartered in Gandhinagar, Gujarat; remote-first team." },
+    { q: "Where are you located?", a: "Headquartered in Jaipur, Rajasthan; remote-first team." },
     { q: "How do we start?", a: "Contact us via the CTA — we'll schedule a discovery call." },
   ],
   gallery: [

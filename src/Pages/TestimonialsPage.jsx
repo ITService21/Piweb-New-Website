@@ -9,7 +9,8 @@ import {
   FaChevronLeft, 
   FaChevronRight,
   FaArrowRight,
-  FaRocket
+  FaExternalLinkAlt,
+  FaGoogle
 } from "react-icons/fa";
 
 const TestimonialsPage = () => {
@@ -39,65 +40,162 @@ const TestimonialsPage = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      position: "CEO",
-      company: "MediCare Solutions",
-      image: "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Aman Kaushal",
+      position: "Business Owner",
+      company: "Laptop Reselling Business",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
       rating: 5,
-      text: "Piweb Tech transformed our hospital operations with their HMS solution. The system is intuitive, reliable, and has significantly improved our patient care efficiency. Their support team is exceptional and always available when we need them.",
-      project: "Hospital Management System",
-      gradient: "from-red-500 to-pink-500"
+      text: "I have taken their website development service for my laptop reselling business and honestly I'm very happy with the result. The team was very friendly and professional, they listened to all my ideas properly and delivered a modern website.",
+      project: "Website Development",
+      gradient: "from-red-500 to-pink-500",
+      source: "Google Reviews",
     },
     {
-      name: "Michael Chen",
-      position: "CTO",
-      company: "RetailMax",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5,
-      text: "The e-commerce platform they built for us exceeded all expectations. Our online sales increased by 200% within the first year. The mobile app integration was seamless and the user experience is outstanding.",
-      project: "E-commerce Platform",
-      gradient: "from-pink-500 to-purple-500"
+      name: "Antima Naruka",
+      position: "Business Owner",
+      company: "Business Website Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      rating: 4,
+      text: "The experience was smooth from start to end. They clearly understood our requirements and delivered exactly what we wanted. Support after delivery was also very good.",
+      project: "Business Website Design",
+      gradient: "from-pink-500 to-purple-500",
+      source: "Google Reviews",
     },
     {
-      name: "Emily Rodriguez",
-      position: "Operations Director",
-      company: "Hotel Grand",
-      image: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Kr Kapil Sisodiya",
+      position: "Business Professional",
+      company: "Technical Support Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
       rating: 5,
-      text: "Their hotel management system has revolutionized our operations. From booking management to guest services, everything is streamlined. The reporting features give us insights we never had before.",
-      project: "Hotel Management System",
-      gradient: "from-purple-500 to-indigo-500"
+      text: "Their services helped me manage my work better. Earlier I faced frequent technical problems, but now everything runs smoothly. Really helpful service.",
+      project: "Technical Support & Maintenance",
+      gradient: "from-purple-500 to-indigo-500",
+      source: "Google Reviews",
     },
     {
-      name: "David Thompson",
-      position: "IT Director",
-      company: "Manufacturing Corp",
-      image: "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5,
-      text: "The cloud migration project was executed flawlessly. We reduced our infrastructure costs by 60% while improving reliability. Their DevOps implementation has made our deployments much more efficient.",
-      project: "Cloud Migration & DevOps",
-      gradient: "from-indigo-500 to-blue-500"
+      name: "Ayushi",
+      position: "Business Owner",
+      company: "Business Website Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      rating: 4,
+      text: "Overall a very good experience! The website looks clean and professional. Some changes took time, but the final output was totally worth it.",
+      project: "Business Website Development",
+      gradient: "from-indigo-500 to-blue-500",
+      source: "Google Reviews",
     },
     {
-      name: "Lisa Wang",
-      position: "Founder",
-      company: "StartupTech",
-      image: "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Deepak Singh Chauhan",
+      position: "Website Owner",
+      company: "SEO Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
       rating: 5,
-      text: "As a startup, we needed a scalable solution that could grow with us. Piweb Tech delivered exactly that. Their custom software development approach and ongoing support have been invaluable to our growth.",
-      project: "Custom Software Development",
-      gradient: "from-blue-500 to-cyan-500"
+      text: "Very nice experience. The design and layout are awesome. They also helped me with SEO setup. Highly recommended for website work.",
+      project: "Website Development & SEO",
+      gradient: "from-blue-500 to-cyan-500",
+      source: "Google Reviews",
     },
     {
-      name: "Robert Martinez",
-      position: "VP of Technology",
-      company: "FinanceHub",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Nidhi Sharma",
+      position: "Project Manager",
+      company: "Corporate Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
       rating: 5,
-      text: "The fintech solution they developed for us is secure, scalable, and user-friendly. We've processed millions of transactions without any issues. Their attention to security and compliance is impressive.",
-      project: "FinTech Platform",
-      gradient: "from-cyan-500 to-teal-500"
-    }
+      text: "Communication was consistent throughout the project. The support team was always responsive and helpful. Satisfied with the service.",
+      project: "Web Development Project",
+      gradient: "from-cyan-500 to-teal-500",
+      source: "Google Reviews",
+    },
+    {
+      name: "Sourabh Labana",
+      position: "Company Owner",
+      company: "Corporate Website",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      rating: 5,
+      text: "Piweb Tech Software Solutions ke saath experience kaafi professional raha. Website quality, functionality aur design sab excellent hai.",
+      project: "Company Website Development",
+      gradient: "from-teal-500 to-green-500",
+      source: "Google Reviews",
+    },
+    // {
+    //   name: "Lakshya Sharma",
+    //   position: "Client",
+    //   company: "Website Development",
+    //   image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+    //   rating: 5,
+    //   text: "Customer support is awesome and the design quality is up to the mark.",
+    //   project: "Website Design",
+    //   gradient: "from-green-500 to-emerald-500",
+    //   source: "Google Reviews",
+    // },
+    {
+      name: "Vaishali Sharma",
+      position: "Business Owner",
+      company: "Service Quality Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      rating: 5,
+      text: "Excellent service quality and timely delivery.",
+      project: "Web Development Services",
+      gradient: "from-emerald-500 to-lime-500",
+      source: "Google Reviews",
+    },
+    {
+      name: "Sonu Pradhan",
+      position: "Client",
+      company: "Website Development",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      rating: 5,
+      text: "Customer support is awesome and the design is up to the mark.",
+      project: "Website Design & Development",
+      gradient: "from-orange-500 to-red-500",
+      source: "Google Reviews",
+    },
+    {
+      name: "Vikas Agarwal",
+      position: "Business Professional",
+      company: "Office Visit Client",
+      image: "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      rating: 5,
+      text: "Visited Piweb Tech Software Solutions personally. The team was professional, supportive, and clearly understood my requirements.",
+      project: "Professional Services",
+      gradient: "from-yellow-500 to-orange-500",
+      source: "Google Reviews",
+    },
+  ];
+  
+
+  const portfolio = [
+    {
+      title: "GrowStartup (Client Site)",
+      description: "Corporate & growth-focused website built for a startup accelerator.",
+      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "Corporate",
+      technologies: ["React", "Tailwind"],
+      link: "https://growstartup.in/",
+    },
+    {
+      title: "Optimal Classes (Client Site)",
+      description: "Edu-tech platform landing and course pages for an online coaching brand.",
+      image: "https://images.pexels.com/photos/4145194/pexels-photo-4145194.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "Education",
+      technologies: ["Next.js", "TypeScript"],
+      link: "https://optimalclasses.in/home",
+    },
+    {
+      title: "Arohan College (Client Site)",
+      description: "Institution website with admissions, courses and contact workflows.",
+      image: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "Education",
+      technologies: ["React", "CMS"],
+      link: "https://www.arohancollege.com/",
+    },
+    {
+      title: "Pitama India (Client Site)",
+      description: "NGO/Social Work website with events, faculty and admission info.",
+      image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "NGO/Social Work",
+      technologies: ["React", "PWA"],
+      link: "https://pitamaindia.org/",
+    },
   ];
 
   useEffect(() => {
@@ -169,7 +267,7 @@ const TestimonialsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Don't just take our word for it. Here's what our <span className="text-red-300 font-bold">clients</span> 
+              Don&apos;t just take our word for it. Here&apos;s what our <span className="text-red-300 font-bold">clients</span> 
               {" "}have to say about working with us.
             </motion.p>
 
@@ -180,7 +278,7 @@ const TestimonialsPage = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <FaStar className="text-red-400 text-xl" />
-              <span className="text-red-300 font-bold">TRUSTED BY 200+ COMPANIES</span>
+              <span className="text-red-300 font-bold">TRUSTED BY 150+ BUSINESSES</span>
             </motion.div>
           </motion.div>
         </div>
@@ -216,7 +314,7 @@ const TestimonialsPage = () => {
                     </div>
                     <FaQuoteLeft className={`text-4xl bg-gradient-to-r ${testimonials[currentTestimonial].gradient} bg-clip-text text-transparent mb-4 mx-auto md:mx-0`} />
                     <blockquote className="text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed italic">
-                      "{testimonials[currentTestimonial].text}"
+                      &quot;{testimonials[currentTestimonial].text}&quot;
                     </blockquote>
                     <div>
                       <p className="text-lg font-bold text-gray-800">
@@ -225,8 +323,9 @@ const TestimonialsPage = () => {
                       <p className="text-gray-600">
                         {testimonials[currentTestimonial].position}, {testimonials[currentTestimonial].company}
                       </p>
-                      <p className="text-sm text-red-600 font-semibold mt-2">
-                        Project: {testimonials[currentTestimonial].project}
+                      <p className="text-sm text-red-600 font-semibold mt-2 flex items-center gap-2">
+                        <FaGoogle className="text-sm" />
+                        {testimonials[currentTestimonial].source} • {testimonials[currentTestimonial].project}
                       </p>
                     </div>
                   </div>
@@ -327,13 +426,94 @@ const TestimonialsPage = () => {
                     ))}
                   </div>
                   <p className="text-gray-700 text-sm leading-relaxed mb-3 line-clamp-4">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </p>
-                  <p className="text-xs text-red-600 font-semibold">
-                    {testimonial.project}
+                  <p className="text-xs text-red-600 font-semibold flex items-center gap-1">
+                    <FaGoogle className="text-xs" />
+                    {testimonial.source}
                   </p>
                   </div>
                 </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Portfolio Section */}
+      <section className="relative py-20 bg-white overflow-hidden">
+        <AnimatedTechBackground variant="light" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+                Our Client Portfolio
+              </span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Live projects we&apos;ve delivered for our amazing clients
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {portfolio.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-red-300 transition-all duration-300 group-hover:shadow-2xl shadow-lg">
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-semibold rounded-full">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-red-600 font-semibold hover:text-pink-600 transition-colors duration-300"
+                    >
+                      Visit Website
+                      <FaExternalLinkAlt className="text-sm" />
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -355,7 +535,7 @@ const TestimonialsPage = () => {
               Ready to Join Our Success Stories?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help transform your business with innovative technology solutions.
+              Let&apos;s discuss how we can help transform your business with innovative technology solutions.
             </p>
             <motion.button
               onClick={openModal}

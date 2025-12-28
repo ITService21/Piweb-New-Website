@@ -268,7 +268,7 @@ const AutoCardCarousel = () => {
         <div className="mb-6 flex justify-center">
           <img 
             src="/image/logo.jpg" 
-            alt="Grow Startup Logo" 
+            alt="Piweb Tech Logo" 
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover shadow-lg border-4 border-white/50"
           />
         </div>

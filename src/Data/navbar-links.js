@@ -15,7 +15,8 @@ import {
   FaCloud,
   FaShieldAlt,
   FaLaptop,
-  FaWrench
+  FaWrench,
+  FaSearch
 } from "react-icons/fa";
 
 export const NavbarLinks = [
@@ -33,7 +34,7 @@ export const NavbarLinks = [
     subLinks: [
       { name: "About Us", link: "/about-us", icon: FaInfoCircle },
       { name: "Mission & Vision", link: "/about-us/mission-vision", icon: FaEye },
-      { name: "Our Team", link: "/about-us/ourteam", icon: FaUsers },
+      // { name: "Our Team", link: "/about-us/ourteam", icon: FaUsers },
       { name: "Our Products", link: "/about-us/ourproducts", icon: FaBox },
       { name: "Our Testimonials", link: "/about-us/ourtestimonials", icon: FaComments },
     ],
@@ -51,13 +52,14 @@ export const NavbarLinks = [
       // { name: "All Services", link: "/services/all", icon: FaCogs },
       { name: "Website Development", link: "/services/website-development", icon: FaGlobe },
       { name: "AI & ML", link: "/services/ai-ml", icon: FaBrain },
+      { name: "SEO Optimization", link: "/services/seo-optimization", icon: FaSearch },
       { name: "Custom Software Development", link: "/services/software-development", icon: FaCode },
       { name: "Enterprise Management Systems", link: "/services/enterprise-systems", icon: FaServer },
       { name: "Cloud Solutions", link: "/services/cloud", icon: FaCloud },
       { name: "Cybersecurity", link: "/services/cybersecurity", icon: FaShieldAlt },
-      { name: "Digital Transformation", link: "/services/digital-transformation", icon: FaLaptop },
+      // { name: "Digital Transformation", link: "/services/digital-transformation", icon: FaLaptop },
       { name: "IT Support & Maintenance", link: "/services/it-support", icon: FaWrench },
-    ],
+    ], 
   },
   {
     name: "CAREERS",

@@ -129,12 +129,12 @@ const ContactUs = () => {
   ];
 
   const socialLinks = [
-    { icon: FaLinkedin, name: "LinkedIn", url: "https://linkedin.com/company/piwebtech", color: "from-blue-600 to-blue-800" },
-    { icon: FaTwitter, name: "Twitter", url: "https://twitter.com/piwebtech", color: "from-cyan-500 to-blue-500" },
-    { icon: FaWhatsapp, name: "WhatsApp", url: "https://wa.me/15551234567", color: "from-green-500 to-emerald-500" },
-    { icon: FaInstagram, name: "Instagram", url: "https://instagram.com/piwebtech", color: "from-pink-500 to-purple-500" },
-    { icon: FaFacebook, name: "Facebook", url: "https://facebook.com/piwebtech", color: "from-blue-600 to-blue-800" },
-    { icon: FaYoutube, name: "YouTube", url: "https://youtube.com/piwebtech", color: "from-red-500 to-red-700" }
+    { icon: FaLinkedin, name: "LinkedIn", url: "https://www.linkedin.com/company/piweb-tech-software-solution/", color: "from-blue-600 to-blue-800" },
+    { icon: FaTwitter, name: "Twitter", url: "#", color: "from-cyan-500 to-blue-500" },
+    // { icon: FaWhatsapp, name: "WhatsApp", url: "https://wa.me/9351870445", color: "from-green-500 to-emerald-500" },
+    { icon: FaInstagram, name: "Instagram", url: "#", color: "from-pink-500 to-purple-500" },
+    { icon: FaFacebook, name: "Facebook", url: "https://m.facebook.com/p/PIweb-Tech-software-solutions-61575722429951/", color: "from-blue-600 to-blue-800" },
+    { icon: FaYoutube, name: "YouTube", url: "#", color: "from-red-500 to-red-700" }
   ];
 
   return (
@@ -499,7 +499,7 @@ const ContactUs = () => {
               <div className="text-center">
                 <FaMapMarkerAlt className="text-6xl text-blue-500 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Location</h3>
-                <p className="text-gray-600 mb-4">123 Tech Street, Silicon Valley, CA 94000</p>
+                <p className="text-gray-600 mb-4">15, Ganesh Nagar 1st Jaipur N, Jhotwara, Jaipur, Rajasthan, 302012</p>
                 <p className="text-sm text-gray-500">Interactive map would be embedded here</p>
               </div>
             </div>

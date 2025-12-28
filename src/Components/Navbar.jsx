@@ -62,13 +62,13 @@ function Navbar() {
 
       {/* Main Navbar */}
       <motion.nav 
-        className="fixed top-0 left-0 w-full z-50 bg-gray-900 shadow-2xl border-b border-white/10 transition-all duration-300"
+        className="fixed top-0 left-0 w-full z-50  bg-gray-900 shadow-2xl border-b border-white/10 transition-all duration-300"
         initial={{ y: 0 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14 sm:h-16 md:h-18 lg:h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+          <div className="flex items-center justify-between">
             
             {/* Logo Section */}
             <motion.div 

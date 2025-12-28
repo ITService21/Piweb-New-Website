@@ -16,21 +16,21 @@ const KeyStats = () => {
 
   const stats = [
     { 
-      number: 500, 
+      number: 200, 
       suffix: "+", 
       label: "Projects Delivered", 
       icon: FaProjectDiagram,
       gradient: "from-blue-500 to-cyan-500"
     },
     { 
-      number: 200, 
+      number: 120, 
       suffix: "+", 
       label: "Happy Clients", 
       icon: FaUsers,
       gradient: "from-cyan-500 to-blue-500"
     },
     { 
-      number: 15, 
+      number: 5, 
       suffix: "+", 
       label: "Years Experience", 
       icon: FaAward,
@@ -44,15 +44,15 @@ const KeyStats = () => {
       gradient: "from-indigo-500 to-purple-500"
     },
     { 
-      number: 50, 
+      number: 5, 
       suffix: "+", 
       label: "Countries Served", 
       icon: FaGlobe,
       gradient: "from-purple-500 to-pink-500"
     },
     { 
-      number: 1000, 
-      suffix: "+", 
+      number: 10, 
+      suffix: "M+", 
       label: "Lines of Code", 
       icon: FaCode,
       gradient: "from-pink-500 to-red-500"

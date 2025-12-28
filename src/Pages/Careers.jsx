@@ -933,15 +933,15 @@ const Careers = () => {
                         </div>
                         
                         <div className="mt-8 pt-6 border-t border-gray-200">
-                          <motion.button
-                            onClick={openModal}
-                            className="px-8 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 flex items-center gap-2"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            Apply Now
-                            <FaChevronRight className="text-sm group-hover:translate-x-1 transition-transform" />
-                          </motion.button>
+                        <motion.a
+  href="mailto:hr@piwebtechnology.com?subject=Job Application&body=Hello HR Team,%0D%0A%0D%0AI would like to apply for the job.%0D%0A%0D%0AName:%0D%0APhone:%0D%0APosition:%0D%0A%0D%0ARegards,"
+  className="w-[180px] px-8 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 flex items-center gap-2"
+  whileHover={{ scale: 1.05, y: -2 }}
+  whileTap={{ scale: 0.95 }}
+>
+  Apply Now
+  <FaChevronRight className="text-sm transition-transform" />
+</motion.a>
                         </div>
                       </div>
                     </motion.div>
@@ -970,7 +970,7 @@ const Careers = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               We&apos;re always looking for talented individuals. Send us your resume and let us know how you can contribute to our team.
             </p>
-            <motion.button
+            {/* <motion.button
               onClick={openModal}
               className="px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-red-500/40 transition-all duration-300 flex items-center gap-2 mx-auto group"
               whileHover={{ scale: 1.05, y: -2 }}
@@ -978,7 +978,16 @@ const Careers = () => {
             >
               Send Your Resume
               <FaBriefcase className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.button> */}
+            <motion.a
+  href="mailto:hr@piwebtechnology.com?subject=Job Application&body=Hello HR Team,%0D%0A%0D%0AI would like to apply for the job.%0D%0A%0D%0AName:%0D%0APhone:%0D%0APosition:%0D%0A%0D%0ARegards,"
+  className="w-[240px] mx-auto px-8 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 flex items-center gap-2"
+  whileHover={{ scale: 1.05, y: -2 }}
+  whileTap={{ scale: 0.95 }}
+>
+              Send Your Resume
+              <FaBriefcase className="group-hover:translate-x-1 transition-transform" />
+</motion.a>
           </motion.div>
         </div>
       </section>

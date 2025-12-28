@@ -111,7 +111,7 @@ export default function BlogPage({ initialPosts = null }) {
     // const cardAnim = { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div className="min-h-screen bg-gradient-to-br bg-white">
             <Navbar />
             
             {/* Hero Section with Animated Background */}
@@ -152,7 +152,7 @@ export default function BlogPage({ initialPosts = null }) {
                 </div>
             </section>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            <div className="  mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
                 {/* Header */}
                 <motion.header 
                     className="mb-16 text-center"
@@ -265,11 +265,11 @@ export default function BlogPage({ initialPosts = null }) {
 
                 {/* Featured */}
                 {featured && (
-                    <section className="relative mb-16 overflow-hidden">
+                    <section className="relative mb-16 overflow-hidden bg-white rounded-[18px]">
                         <AnimatedTechBackground variant="light" />
                         <div className="relative z-10">
                     <motion.article 
-                        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch"
+                        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch py-4  md:p-6"
                         initial={{ opacity: 0, y: 60 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
@@ -282,7 +282,7 @@ export default function BlogPage({ initialPosts = null }) {
                             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                             viewport={{ once: true, amount: 0.2 }}
                             whileHover={{ scale: 1.03, y: -12 }}
-                        >
+                         >
                             <motion.div
                                 className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 rounded-3xl"
                                 transition={{ duration: 0.3 }}
@@ -336,7 +336,7 @@ export default function BlogPage({ initialPosts = null }) {
                             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                             viewport={{ once: true, amount: 0.2 }}
                             whileHover={{ scale: 1.02, y: -8 }}
-                        >
+                         >
                             <motion.div
                                 className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-pink-500/5 opacity-0 hover:opacity-100 rounded-3xl"
                                 transition={{ duration: 0.3 }}
@@ -380,7 +380,7 @@ export default function BlogPage({ initialPosts = null }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.2 }}
                     viewport={{ once: false, amount: 0.2 }}
-                >
+                 >
                     <motion.button
                         onClick={() => setActiveTag("")}
                         className={`text-sm px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
@@ -415,7 +415,7 @@ export default function BlogPage({ initialPosts = null }) {
                 </motion.div>
 
                 {/* posts grid */}
-                <section className="relative overflow-hidden">
+                <section className="relative overflow-hidden p-0 md:p-6 bg-white rounded-[18px]">
                     <AnimatedTechBackground variant="light" />
                     <div className="relative z-10">
                 <motion.section 
@@ -466,7 +466,7 @@ export default function BlogPage({ initialPosts = null }) {
                                 <div className="flex items-center justify-between">
                                     <div className="flex gap-2 flex-wrap">
                                         {(p.tags || []).slice(0, 2).map((t) => (
-                                            <span key={t} className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700 font-medium">
+                                            <span key={t} className="text-xs px-2 py-1 rounded-full   text-gray-700 font-medium">
                                                 #{t}
                                             </span>
                                         ))}

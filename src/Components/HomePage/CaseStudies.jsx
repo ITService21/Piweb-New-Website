@@ -35,11 +35,11 @@ const CaseStudies = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const caseStudies = [
     {
-      title: "Hospital Management System Implementation",
+      title: "Hospital Management System",
       client: "Regional Medical Center",
       industry: "Healthcare",
       icon: FaHeart,
-      image: "https://cdn.pixabay.com/photo/2021/10/11/18/56/doctor-6701410_1280.jpg",
+      image: "https://cdn.pixabay.com/photo/2016/04/19/13/22/hospital-1338585_1280.jpg",
       challenge: "Manual processes and scattered patient data across multiple systems causing inefficiencies",
       solution: "Custom HMS with EHR integration and automated workflows",
       results: [
@@ -52,16 +52,16 @@ const CaseStudies = () => {
       bgGradient: "from-red-500/10 to-pink-500/10",
       shadowColor: "shadow-red-500/30",
       accentColor: "red",
-      duration: "6 months",
-      team: "8 developers",
-      budget: "$150,000",
+      duration: "6 Months",
+      team: "8  Devs",
+      budget: "$50k",
       tech: ["React", "Node.js", "PostgreSQL", "AWS"],
       category: "Enterprise Software",
       rating: 4.9,
       testimonial: "Piweb Tech transformed our hospital operations completely. The system is intuitive and has dramatically improved our efficiency.",
       clientLogo: "https://via.placeholder.com/120x40/ef4444/ffffff?text=Regional+Medical",
       screenshots: [
-        "https://cdn.pixabay.com/photo/2021/10/11/18/56/doctor-6701410_1280.jpg",
+        "https://cdn.pixabay.com/photo/2016/04/19/13/22/hospital-1338585_1280.jpg",
         "https://cdn.pixabay.com/photo/2020/04/23/22/38/hospital-5084249_1280.jpg",
         "https://cdn.pixabay.com/photo/2017/11/15/11/37/doctor-2951379_1280.jpg"
       ],
@@ -103,13 +103,13 @@ const CaseStudies = () => {
         "60% faster page load times",
         "85% customer satisfaction score"
       ],
-      gradient: "from-pink-500 to-purple-500",
+      gradient: "from-red-500 to-pink-500",
       bgGradient: "from-pink-500/10 to-purple-500/10",
       shadowColor: "shadow-pink-500/30",
       accentColor: "pink",
-      duration: "8 months",
-      team: "12 developers",
-      budget: "$250,000",
+      duration: "8 Months",
+      team: "12  Devs",
+      budget: "$95k",
       tech: ["Vue.js", "Laravel", "MySQL", "Redis"],
       category: "E-commerce Platform",
       rating: 4.8,
@@ -145,7 +145,7 @@ const CaseStudies = () => {
       ]
     },
     {
-      title: "Cloud Migration & DevOps Implementation",
+      title: "Cloud Migration & DevOps",
       client: "Manufacturing Company",
       industry: "Manufacturing",
       icon: FaIndustry,
@@ -158,13 +158,13 @@ const CaseStudies = () => {
         "50% faster deployment cycles",
         "80% reduction in manual operations"
       ],
-      gradient: "from-purple-500 to-indigo-500",
+      gradient: "from-red-500 to-pink-500",
       bgGradient: "from-purple-500/10 to-indigo-500/10",
       shadowColor: "shadow-purple-500/30",
       accentColor: "purple",
-      duration: "4 months",
-      team: "6 developers",
-      budget: "$80,000",
+      duration: "4 Months",
+      team: "6  Devs",
+      budget: "$60k",
       tech: ["Docker", "Kubernetes", "AWS", "Jenkins"],
       category: "Cloud Infrastructure",
       rating: 4.9,
@@ -213,13 +213,13 @@ const CaseStudies = () => {
         "50% faster transaction processing",
         "Zero security breaches"
       ],
-      gradient: "from-indigo-500 to-blue-500",
+      gradient: "from-red-500 to-pink-500",
       bgGradient: "from-indigo-500/10 to-blue-500/10",
       shadowColor: "shadow-indigo-500/30",
       accentColor: "indigo",
-      duration: "10 months",
-      team: "15 developers",
-      budget: "$400,000",
+      duration: "10 Months",
+      team: "15  Devs",
+      budget: "$100k",
       tech: ["React Native", "Node.js", "MongoDB", "Stripe"],
       category: "Mobile Application",
       rating: 4.7,
@@ -821,7 +821,7 @@ const CaseStudies = () => {
             >
               {/* Enhanced Case Study Card - Fixed Height */}
               <motion.div 
-                className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden h-[800px] flex flex-col"
+                className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden h- [800px] flex flex-col"
                 whileHover={{ 
                   scale: 1.02, 
                   y: -15,
@@ -842,11 +842,11 @@ const CaseStudies = () => {
                 }}
               >
                 {/* Enhanced Image Section */}
-                <div className="relative h-64 sm:h-72 overflow-hidden">
+                <div className="relative   md:overflow-hidden">
                   <motion.img 
                       src={study.image} 
                       alt={study.title}
-                    className="w-full h-full object-cover"
+                    className="h-[170px] w-[100%] "
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   />
@@ -950,7 +950,7 @@ const CaseStudies = () => {
                   {/* Title and Client */}
                   <div className="absolute bottom-12 left-4 right-4">
                     <motion.h3 
-                      className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight"
+                      className="text-[15px] md:text-xl font-bold text-white mb-2 leading-tight"
                       animate={{
                         y: hoveredCard === index ? -5 : 0,
                       }}
@@ -1096,7 +1096,7 @@ const CaseStudies = () => {
                     </motion.div>
                     
                     <motion.button 
-                      className={`px-6 py-3 bg-gradient-to-r ${study.gradient} text-white rounded-xl font-semibold text-sm shadow-lg`}
+                      className={`px-4 py-3 md:px-6 md:py-3 bg-gradient-to-r ${study.gradient} text-white rounded-xl font-semibold text-[12px] md:text-sm shadow-lg`}
                       whileHover={{ 
                         scale: 1.05, 
                         y: -2,
@@ -1158,7 +1158,7 @@ const CaseStudies = () => {
         <AnimatePresence>
           {isModalOpen && selectedCase && (
             <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              className="pt-20 md:pt-28 fixed inset-0 z-50 flex items-center justify-center p-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -1183,14 +1183,14 @@ const CaseStudies = () => {
             >
               {/* Enhanced Header Controls */}
               <div className="absolute top-6 right-6 z-20 flex gap-2">
-                <motion.button
+                {/* <motion.button
                   onClick={() => window.open(selectedCase.liveSiteUrl, '_blank')}
                   className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 shadow-lg"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FaExternalLinkAlt className="text-sm" />
-                </motion.button>
+                </motion.button> */}
                 
                 <motion.button
                   onClick={() => handleShare(selectedCase)}
@@ -1227,7 +1227,7 @@ const CaseStudies = () => {
                 </AnimatePresence>
                 
                 {/* Image Navigation */}
-                <div className="absolute inset-y-0 left-4 flex items-center">
+                {/* <div className="absolute inset-y-0 left-4 flex items-center">
                   <motion.button
                     onClick={prevImage}
                     className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-all duration-300"
@@ -1247,10 +1247,10 @@ const CaseStudies = () => {
                   >
                     →
                   </motion.button>
-                </div>
+                </div> */}
 
                 {/* Image Indicators */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
                   {selectedCase.screenshots.map((_, index) => (
                     <button
                       key={index}
@@ -1260,7 +1260,7 @@ const CaseStudies = () => {
                       }`}
                     />
                   ))}
-                </div>
+                </div> */}
 
                 <div className={`absolute inset-0 bg-gradient-to-t ${selectedCase.bgGradient} to-transparent`} />
                 
@@ -1276,8 +1276,8 @@ const CaseStudies = () => {
                       </span>
                     </div>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl font-bold mb-2">{selectedCase.title}</h2>
-                  <p className="text-xl opacity-90">{selectedCase.client}</p>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-2">{selectedCase.title}</h2>
+                  <p className="text-[14px]md:text-xl opacity-90">{selectedCase.client}</p>
                 </div>
               </div>
 
@@ -1291,7 +1291,7 @@ const CaseStudies = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <FaCalendarAlt className="text-2xl text-red-500 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-gray-900">{selectedCase.duration}</div>
+                    <div className="md:text-2xl text-[23px] font-bold text-gray-900">{selectedCase.duration}</div>
                     <div className="text-sm text-gray-600">Duration</div>
                   </motion.div>
                   
@@ -1301,7 +1301,7 @@ const CaseStudies = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <FaUsers className="text-2xl text-blue-500 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-gray-900">{selectedCase.team}</div>
+                    <div className="md:text-2xl text-[22px] font-bold text-gray-900">{selectedCase.team}</div>
                     <div className="text-sm text-gray-600">Team Size</div>
                   </motion.div>
                   
@@ -1311,7 +1311,7 @@ const CaseStudies = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <FaDollarSign className="text-2xl text-green-500 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-gray-900">{selectedCase.budget}</div>
+                    <div className="md:text-2xl text-[22px] font-bold text-gray-900">{selectedCase.budget}</div>
                     <div className="text-sm text-gray-600">Budget</div>
                   </motion.div>
                   
@@ -1321,43 +1321,13 @@ const CaseStudies = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <FaStar className="text-2xl text-yellow-500 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-gray-900">{selectedCase.rating}</div>
+                    <div className="md:text-2xl text-[22px] font-bold text-gray-900">{selectedCase.rating}</div>
                     <div className="text-sm text-gray-600">Rating</div>
                   </motion.div>
                 </div>
 
                 {/* Client Testimonial */}
-                <motion.div 
-                  className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-6 mb-8 border-l-4 border-red-500"
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                        &ldquo;
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <p className="text-gray-700 text-lg italic mb-4 leading-relaxed">
-                        {selectedCase.testimonial}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900">{selectedCase.client}</div>
-                          <div className="text-sm text-gray-600">{selectedCase.industry} Industry</div>
-                        </div>
-                        <img 
-                          src={selectedCase.clientLogo} 
-                          alt={`${selectedCase.client} Logo`}
-                          className="h-8 opacity-60"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+        
 
                 {/* Detailed Description */}
                 <div className="mb-8">
@@ -1465,7 +1435,7 @@ const CaseStudies = () => {
                 </div>
 
                 {/* Enhanced Modal CTA */}
-                <div className="mt-8 pt-6 border-t border-gray-200">
+                {/* <div className="mt-8 pt-6 border-t border-gray-200">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to Start Your Project?</h3>
                     <p className="text-gray-600">Let&apos;s create something amazing together like we did for {selectedCase.client}</p>
@@ -1505,16 +1475,17 @@ const CaseStudies = () => {
                       Download PDF
                     </motion.button>
                   </div>
-                  
-                  <div className="mt-6 text-center">
-                    <p className="text-sm text-gray-500">
+ 
+                </div> */}
+
+                <div className="mt-6 text-center">
+                    {/* <p className="text-sm text-gray-500">
                       This project increased {selectedCase.client}&apos;s efficiency by{" "}
                       <span className="font-semibold text-red-600">
                         {selectedCase.results[0].match(/\d+/)?.[0]}%
                       </span>
-                    </p>
+                    </p> */}
                   </div>
-                </div>
               </div>
             </motion.div>
           </motion.div>

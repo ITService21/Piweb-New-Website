@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { useSpring, animated, useTrail, config } from "@react-spring/web";
 import Navbar from "../../Components/Navbar";
 import { useModal } from "../../Context/ModalContext";
@@ -322,28 +322,45 @@ const EnterpriseSystems = () => {
           ))}
 
           {/* Particle Effects */}
-          {[...Array(23)].map((_, i) => (
-            <animated.div
-              key={`ent-particle-${i}`}
-              className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 1, 0],
-                y: [0, -58, 0],
-                x: [0, Math.random() * 115 - 57.5, 0],
-              }}
-              transition={{
-                duration: 4.8 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
+          {
+            // Memoize particle positions so they remain stable across renders and
+            // avoid flickering caused by re-generated random values on every render.
+            (() => {
+              const particlePositions = useMemo(() =>
+                Array.from({ length: 23 }).map(() => ({
+                  leftPercent: Math.random() * 100,
+                  topPercent: Math.random() * 100,
+                  xOffset: Math.random() * 115 - 57.5,
+                  duration: 4.8 + Math.random() * 2,
+                  delay: Math.random() * 3,
+                })),
+                []
+              );
+
+              return particlePositions.map((pos, i) => (
+                <animated.div
+                  key={`ent-particle-${i}`}
+                  className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full"
+                  style={{
+                    left: `${pos.leftPercent}%`,
+                    top: `${pos.topPercent}%`,
+                  }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                    y: [0, -58, 0],
+                    x: [0, pos.xOffset, 0],
+                  }}
+                  transition={{
+                    duration: pos.duration,
+                    repeat: Infinity,
+                    delay: pos.delay,
+                    ease: "easeInOut",
+                  }}
+                />
+              ));
+            })()
+          }
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
@@ -383,7 +400,7 @@ const EnterpriseSystems = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <animated.button
+              {/* <animated.button
                 className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 flex items-center gap-2 group"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -398,7 +415,7 @@ const EnterpriseSystems = () => {
               >
                 View Solutions
                 <FaPlay className="group-hover:scale-110 transition-transform" />
-              </animated.button>
+              </animated.button> */}
             </animated.div>
           </animated.div>
         </div>
@@ -809,7 +826,7 @@ const EnterpriseSystems = () => {
                 Schedule Demo
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </animated.button>
-              <animated.button
+              {/* <animated.button
                 onClick={openModal}
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto group backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -817,7 +834,7 @@ const EnterpriseSystems = () => {
               >
                 Contact Sales
                 <FaPhone className="group-hover:scale-110 transition-transform" />
-              </animated.button>
+              </animated.button> */}
             </div>
           </animated.div>
         </div>

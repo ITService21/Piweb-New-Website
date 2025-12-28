@@ -396,20 +396,20 @@ const SoftwareDevelopment = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <animated.button
+              {/* <animated.button
                 className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 flex items-center gap-2 group"
                 whileHover={{ scale: 1.05, y: -2 }}
               >
                 Get Custom Solution
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </animated.button>
-              <animated.button
+              </animated.button> */}
+              {/* <animated.button
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 group backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
               >
                 View Portfolio
                 <FaPlay className="group-hover:scale-110 transition-transform" />
-              </animated.button>
+              </animated.button> */}
             </animated.div>
           </animated.div>
         </div>
@@ -834,14 +834,14 @@ const SoftwareDevelopment = () => {
                 Start Your Project
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </animated.button>
-              <animated.button
+              {/* <animated.button
                 onClick={openModal}
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto group backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
               >
                 Schedule Consultation
                 <FaClock className="group-hover:scale-110 transition-transform" />
-              </animated.button>
+              </animated.button> */}
             </div>
           </animated.div>
         </div>

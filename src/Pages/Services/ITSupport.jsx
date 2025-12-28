@@ -328,13 +328,13 @@ const ITSupport = () => {
                 Get Instant Support
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <button
+              {/* <button
                 onClick={openModal}
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 group backdrop-blur-sm hover:scale-105 hover:-translate-y-1"
               >
                 View Support Plans
                 <FaCog className="group-hover:scale-110 transition-transform" />
-              </button>
+              </button> */}
             </animated.div>
           </animated.div>
         </div>
@@ -1066,13 +1066,13 @@ const CTASection = ({ openModal }) => {
                 Contact Support Team
                 <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
               </button>
-              <button
+              {/* <button
                 onClick={openModal}
                 className="px-10 py-5 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-3 mx-auto group backdrop-blur-sm text-xl hover:scale-105 hover:-translate-y-1"
               >
                 View Support Plans
                 <FaCog className="group-hover:scale-110 transition-transform" />
-              </button>
+              </button> */}
             </animated.div>
             </div>
         </animated.div>

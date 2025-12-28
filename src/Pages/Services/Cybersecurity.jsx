@@ -46,7 +46,7 @@ const Cybersecurity = () => {
   }, []);
 
   const animateCounters = () => {
-    const targets = { threats: 10000, clients: 500, incidents: 0, protection: 100 };
+    const targets = { threats: 1000, clients: 110, incidents: 0, protection: 100 };
     const duration = 2000;
     const steps = 60;
     const stepDuration = duration / steps;
@@ -327,7 +327,7 @@ const Cybersecurity = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <animated.button
+              {/* <animated.button
                 className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-red-500/40 transition-all duration-300 flex items-center gap-2 group"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -342,7 +342,7 @@ const Cybersecurity = () => {
               >
                 Security Assessment
                 <FaShieldAlt className="group-hover:scale-110 transition-transform" />
-              </animated.button>
+              </animated.button> */}
             </animated.div>
           </animated.div>
         </div>
@@ -688,7 +688,7 @@ const Cybersecurity = () => {
               Protect your business with comprehensive cybersecurity solutions tailored to your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <animated.button
+              {/* <animated.button
                 onClick={openModal}
                 className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:shadow-2xl hover:shadow-white/40 transition-all duration-300 flex items-center gap-2 mx-auto group"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -696,7 +696,7 @@ const Cybersecurity = () => {
               >
                 Get Security Assessment
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </animated.button>
+              </animated.button> */}
               <animated.button
                 onClick={openModal}
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto group backdrop-blur-sm"

@@ -44,7 +44,7 @@ export const MenuLinks = ({ menuLinks }) => {
             transition={{ duration: 0.2 }}
           >
             <div
-              className={`relative flex items-center px-4 py-3 text-sm font-semibold text-white transition-all duration-200 rounded-lg cursor-pointer ${
+              className={`relative flex items-center px-4 py-3 md:text-[0.97vw] font-semibold text-white transition-all duration-200 rounded-lg cursor-pointer ${
                 activeDropdown === index ? 'text-red-300 bg-white/10' : 'group-hover:text-red-300'
               } ${menuLink?.link ? 'hover:bg-white/10' : ''}`}
               onClick={() => {

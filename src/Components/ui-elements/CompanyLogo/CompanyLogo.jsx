@@ -7,7 +7,7 @@ export const CompanyLogo = () => {
       {/* Logo */}
       <div className="relative mr-3 sm:mr-4">
         <motion.div
-          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 xl:w-[70px] xl:h-[70px] rounded-full overflow-hidden border-2 border-white shadow-lg transition-transform duration-300 group-hover:scale-105"
+          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 xl:w-[60px] xl:h-[60px] rounded-full overflow-hidden border-2 border-white shadow-lg transition-transform duration-300 group-hover:scale-105"
           whileHover={{
             scale: 1.08,
             rotate: [0, -3, 3, 0],

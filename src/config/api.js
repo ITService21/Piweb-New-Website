@@ -1,8 +1,8 @@
 // API Configuration
 const getApiBaseUrl = () => {
     // Check if we're in production (deployed domain)
-    const isProduction = window.location.hostname === 'growstartup.in' || 
-                        window.location.hostname === 'www.growstartup.in';
+    const isProduction = window.location.hostname === 'piwebtechnology.com' || 
+                        window.location.hostname === 'www.piwebtechnology.com';
     
     // Try HTTPS first, fallback to HTTP
     if (isProduction) {
@@ -15,7 +15,7 @@ const getApiBaseUrl = () => {
 const API_BASE_URL = getApiBaseUrl();
 
 export const API_ENDPOINTS = {
-    SEND_FORM_MAIL: `${API_BASE_URL}/send-form-mail`
+    SEND_FORM_MAIL: `${API_BASE_URL}/send-form-mail?company=piweb`
 };
 
 export default API_BASE_URL;

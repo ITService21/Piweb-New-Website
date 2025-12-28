@@ -320,13 +320,6 @@ const IndustriesWeServe = () => {
                   '0 0 20px rgba(239, 68, 68, 0.5)',
                 ],
               }}
-              transition={{
-                boxShadow: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }
-              }}
             />
           </motion.h2>
           

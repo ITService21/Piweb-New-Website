@@ -16,11 +16,14 @@ import {
   FaServer,
   FaCogs
 } from "react-icons/fa";
-
+import FormModal from "./../../Components/FormModal";
+import { useModal } from "../../Context/ModalContext";
 const HeroBanner = () => {
   const [currentTech, setCurrentTech] = useState(0);
   const [currentText, setCurrentText] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { openModal, closeModal } = useModal();
+  const [showFormModal, setShowFormModal] = useState(false);
   
   const techIcons = [
     { icon: FaCode, name: "Development", color: "from-red-500 to-pink-500" },
@@ -33,7 +36,7 @@ const HeroBanner = () => {
 
   const textVariations = [
     {
-      title: "Empowering Digital",
+      title: "Elevate Digital",
       subtitle: "Transformation",
       description: "Leading IT solutions provider delivering cutting-edge software development, enterprise management systems, and digital transformation services to businesses worldwide."
     },
@@ -97,8 +100,8 @@ const HeroBanner = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900 pt-20">
-      {/* Advanced Tech Background Animation */}
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br   via-black to-gray-900">
+      {/* Advanced Tech Background Animation (hero banner background)*/}
       <div className="absolute inset-0">
         {/* Animated Circuit Board Pattern */}
         <div className="absolute inset-0 opacity-30">
@@ -668,9 +671,9 @@ const HeroBanner = () => {
                     }}
                   />
                 </motion.span>
-                <br />
+                {/* <br /> */}
                 <motion.span 
-                  className="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent text-center w-full relative"
+                  className="mt-2 md:mt-6 bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent text-center w-full relative"
                   initial={{ 
                     x: currentText % 2 === 0 ? 100 : -100, 
                     opacity: 0,
@@ -689,7 +692,7 @@ const HeroBanner = () => {
                     ease: [0.25, 0.46, 0.45, 0.94]
                   }}
                 >
-                  {textVariations[currentText].subtitle}
+                  {textVariations[currentText]?.subtitle}
                   
                   {/* Advanced Energy Field */}
                   <motion.div
@@ -919,22 +922,26 @@ const HeroBanner = () => {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-red-500/25 transition-all duration-300 flex items-center gap-2 group"
+              className="text-[14px] md:text-base px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-red-500/25 transition-all duration-300 flex items-center gap-2 group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+                              onClick={() => {
+                  openModal();
+                  setShowFormModal(true);
+                }}
             >
-              Get Started Today
+              Get Started Now
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
             
-            <motion.button
+            {/* <motion.button
               className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 group backdrop-blur-sm"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <FaPlay className="group-hover:scale-110 transition-transform" />
               Watch Demo
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </motion.div>
       </div>
@@ -953,6 +960,13 @@ const HeroBanner = () => {
           />
         </div>
       </motion.div>
+              <FormModal
+          open={showFormModal}
+          onClose={() => {
+            closeModal();
+            setShowFormModal(false);
+          }}
+        />
     </section>
   );
 };

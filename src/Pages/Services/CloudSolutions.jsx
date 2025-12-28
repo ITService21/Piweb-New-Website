@@ -49,7 +49,7 @@ const CloudSolutions = () => {
   }, []);
 
   const animateCounters = () => {
-    const targets = { uptime: 99.9, savings: 40, clients: 200, deployments: 500 };
+    const targets = { uptime: 99.9, savings: 40, clients: 30, deployments: 40 };
     const duration = 2000;
     const steps = 60;
     const stepDuration = duration / steps;
@@ -900,22 +900,22 @@ const CloudSolutions = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "David Martinez",
-                role: "CTO, TechCorp Solutions",
+                name: "Sourabh Labana",
+                role: "Adviaor, GrowStartup",
                 content: "Piweb Tech's cloud migration transformed our infrastructure completely. We reduced costs by 45% and improved performance significantly. Outstanding service!",
                 rating: 5,
                 image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400"
               },
               {
-                name: "Jennifer Lee",
+                name: "Suraj Bansal",
                 role: "VP Engineering, CloudFirst Inc.",
                 content: "The team's expertise in multi-cloud architecture is exceptional. They helped us optimize our AWS and Azure setup, resulting in better scalability and reliability.",
                 rating: 5,
                 image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400"
               },
               {
-                name: "Robert Thompson",
-                role: "IT Director, Enterprise Systems",
+                name: "Arnab Das",
+                role: "CTO, TechCorp Solutions",
                 content: "Best cloud consulting experience we've had. Professional, knowledgeable, and delivered exactly what they promised. Highly recommend their services!",
                 rating: 5,
                 image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
@@ -990,7 +990,7 @@ const CloudSolutions = () => {
                 Start Cloud Migration
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </animated.button>
-              <animated.button
+              {/* <animated.button
                 onClick={openModal}
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto group backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -998,7 +998,7 @@ const CloudSolutions = () => {
               >
                 Get Cloud Consultation
                 <FaCloud className="group-hover:scale-110 transition-transform" />
-              </animated.button>
+              </animated.button> */}
             </div>
           </animated.div>
         </div>

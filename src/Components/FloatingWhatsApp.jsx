@@ -48,7 +48,7 @@ export default function FloatingWhatsApp() {
             {/* Book Consultant Button - Right */}
             <motion.button
                 onClick={handleFormModalOpen}
-                className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-base rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
+                className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-500 to-pink-700 text-white font-bold text-base rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
                 initial={{ opacity: 1, scale: 1 }}
                 animate={{ 
                     opacity: 1, 

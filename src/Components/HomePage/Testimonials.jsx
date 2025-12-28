@@ -415,8 +415,8 @@ const Testimonials = () => {
               />
               <div className="text-center">
                 <h4 className="text-lg font-bold text-white">{testimonials[currentTestimonial].name}</h4>
-                <p className="text-red-400 font-medium">{testimonials[currentTestimonial].position}</p>
-                <p className="text-gray-300">{testimonials[currentTestimonial].company}</p>
+                {/* <p className="text-red-400 font-medium">{testimonials[currentTestimonial].position}</p> */}
+                {/* <p className="text-gray-300">{testimonials[currentTestimonial].company}</p> */}
                 <p className="text-sm text-gray-400 mt-1">Project: {testimonials[currentTestimonial].project}</p>
               </div>
             </div>

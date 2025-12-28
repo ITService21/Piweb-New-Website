@@ -81,7 +81,7 @@ const AboutUs = () => {
   }, []);
 
   const animateCounters = () => {
-    const targets = { projects: 500, clients: 200, team: 50, years: 8 };
+    const targets = { projects: 200, clients: 150, team: 24, years: 5 };
     const duration = 2000;
     const steps = 60;
     const stepDuration = duration / steps;
@@ -381,7 +381,7 @@ const AboutUs = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaCheckCircle className="text-green-500" />
-                  <span className="text-gray-700 font-medium">10+ Years Experience</span>
+                  <span className="text-gray-700 font-medium">5+ Years Experience</span>
                 </motion.div>
                 <motion.div
                   className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-2 rounded-full"
@@ -676,8 +676,8 @@ const AboutUs = () => {
                 At Piweb Tech, we don't just write code – we craft digital experiences that 
                 transform businesses and empower people."
               </blockquote>
-              <div className="text-red-300 font-semibold text-lg">Sarah Johnson</div>
-              <div className="text-gray-400">CEO & Founder, Piweb Tech</div>
+              <div className="text-red-300 font-semibold text-lg">Vikramaditya Singh Naruka</div>
+              <div className="text-gray-400">CEO & Co-Founder, Piweb Tech</div>
             </div>
           </motion.div>
         </div>
@@ -742,7 +742,7 @@ const AboutUs = () => {
       </section>
 
       {/* Offices */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+      {/* <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
         <AnimatedTechBackground variant="light" />
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <motion.div
@@ -812,7 +812,7 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer CTA */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
@@ -841,7 +841,7 @@ const AboutUs = () => {
                 Get In Touch
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 onClick={openModal}
                 className="px-8 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto group backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -849,7 +849,7 @@ const AboutUs = () => {
               >
                 View Our Work
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.button> */}
             </div>
           </motion.div>
         </div>

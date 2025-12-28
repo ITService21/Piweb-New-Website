@@ -14,7 +14,7 @@ const myData = {
         email: "info@piwebtechnology.com",
         website: "https://piwebtechnology.com",
         founded: "2015",
-        location: "Gandhinagar, Gujarat",
+        location: "Jaipur, Rajasthan",
         teamSize: "25+ Experts"
     },
     vision: { 
