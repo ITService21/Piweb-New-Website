@@ -676,7 +676,7 @@ const AboutUs = () => {
                 At Piweb Tech, we don't just write code – we craft digital experiences that 
                 transform businesses and empower people."
               </blockquote>
-              <div className="text-red-300 font-semibold text-lg">Vikramaditya Singh Naruka</div>
+              <div className="text-red-300 font-semibold text-lg">Soumya Ranjan Pradhan</div>
               <div className="text-gray-400">CEO & Co-Founder, Piweb Tech</div>
             </div>
           </motion.div>
