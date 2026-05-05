@@ -37,6 +37,7 @@ export const NavbarLinks = [
       // { name: "Our Team", link: "/about-us/ourteam", icon: FaUsers },
       { name: "Our Products", link: "/about-us/ourproducts", icon: FaBox },
       { name: "Our Testimonials", link: "/about-us/ourtestimonials", icon: FaComments },
+      { name: "Privacy Policy", link: "/about-us/privacy-policy", icon: FaShieldAlt },
     ],
   },
  

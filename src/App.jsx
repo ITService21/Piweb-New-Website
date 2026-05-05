@@ -15,6 +15,7 @@ import MissionVision from "./Pages/MissionVision";
 import OurTeam from "./Pages/OurTeam";
 import OurProducts from "./Pages/OurProducts";
 import TestimonialsPage from "./Pages/TestimonialsPage";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import CompanyOverview from "./Pages/CompanyOverview";
 import BlogPage from "./Pages/Blog";
 import Careers from "./Pages/Careers";
@@ -59,6 +60,7 @@ function App() {
         <Route path="/about-us/overview" element={<CompanyOverview />} />
         <Route path="/about-us/ourproducts" element={<OurProducts />} />
         <Route path="/about-us/ourtestimonials" element={<TestimonialsPage />} />
+        <Route path="/about-us/privacy-policy" element={<PrivacyPolicy />} />
          <Route path="/services/website-development" element={<WebDevelopment />} />
          <Route path="/services/ai-ml" element={<AIML />} />
          <Route path="/services/seo-optimization" element={<SEOOptimization />} />
